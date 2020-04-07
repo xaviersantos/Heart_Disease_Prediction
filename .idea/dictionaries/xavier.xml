@@ -2,12 +2,15 @@
   <dictionary name="xavier">
     <words>
       <w>abnorm</w>
+      <w>dataframe</w>
       <w>downsloping</w>
       <w>heatmap</w>
       <w>husl</w>
+      <w>logreg</w>
       <w>matplotlib</w>
       <w>preprocessing</w>
       <w>pyplot</w>
+      <w>randfor</w>
       <w>scaler</w>
       <w>scipy</w>
       <w>seaborn</w>

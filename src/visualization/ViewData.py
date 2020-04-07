@@ -1,3 +1,5 @@
+from visualization import *
+
 
 def show_data(data):
     # shape
@@ -25,6 +27,23 @@ def show_data(data):
     print(data.corr()["Diagnosis"].abs().sort_values(ascending=False))
     with open('report/tables/data_correlation.tex', 'w') as tf:
         tf.write((data.corr()["Diagnosis"].abs().sort_values(ascending=False).to_latex()))
+
+
+def outliers(data):
+    z = np.abs(stats.zscore(data))
+    threshold = 3
+    res = np.where(z > threshold)
+    print("Length:", len(res[0]), ":", len(res[1]))
+    print("Rows:", res[0])
+    print("Columns:", res[1])
+
+    outliers_row = []
+    for j in res[0]:
+        r = []
+        for i in data.columns:
+            r.append(data[i][j])
+        outliers_row.append(r)
+    return pd.DataFrame(data=outliers_row, columns=data.columns)
 
 
 # shows the categorical data as name instead of value

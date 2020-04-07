@@ -82,4 +82,3 @@ def scatter_pairs(data):
     sns.pairplot(data, hue="Diagnosis", palette="husl")
     plt.savefig('report/images/correlation_scatter.pdf', bbox_inches='tight')
     plt.show()
-
