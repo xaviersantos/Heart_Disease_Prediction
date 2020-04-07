@@ -1,9 +1,9 @@
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-from ML.Models import logistic_regression, naive_bayes, k_nearest_neighbors, decision_tree
-from visualization.ViewData import *
-from visualization.PreAnalysis import *
+from data_analysis.ViewData import *
+from data_analysis.PreAnalysis import *
+from results.ModelResults import final_score
 
 
 def load_dataset():
@@ -49,35 +49,6 @@ def scaling_data(data):
     data[columns_to_scale] = standardScaler.fit_transform(data[columns_to_scale])
 
     return data
-
-def final_score(X_train, y_train, X_test, y_test):
-    # initialize an empty list
-    accuracy = []
-
-    # list of algorithms names
-    classifiers = ['Logistic Regression', 'Naive Bayes','KNN','Decision Trees',
-                   #'Random Forests'
-                   ]
-
-    # list of algorithms with parameters
-    models = [logistic_regression(X_train, y_train, X_test, y_test),
-              naive_bayes(X_train, y_train, X_test, y_test),
-              k_nearest_neighbors(X_train, y_train, X_test, y_test),
-              decision_tree(X_train, y_train, X_test, y_test),
-              #random_forest(X_train, y_train, X_test, y_test)
-              ]
-
-    # loop through algorithms and append the score into the list
-    for i in models:
-        model = i
-        model.fit(X_train, y_train)
-        score = model.score(X_test, y_test)
-        accuracy.append(score)
-
-    # create a dataframe from accuracy results
-    summary = pd.DataFrame({'accuracy': accuracy}, index=classifiers)
-    print(summary)
-
 
 
 def main():

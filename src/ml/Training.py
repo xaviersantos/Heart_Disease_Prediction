@@ -1,9 +1,7 @@
+from utils import log
 
-def train_model(X_train, y_train, X_test, y_test, classifier, **kwargs):
-    """
-    Fit the chosen model and print out the score.
 
-    """
+def train_model(X_train, y_train, X_test, y_test, classifier, logfile=None, **kwargs):
 
     # instantiate model
     model = classifier(**kwargs)
@@ -15,7 +13,7 @@ def train_model(X_train, y_train, X_test, y_test, classifier, **kwargs):
     fit_accuracy = model.score(X_train, y_train)
     test_accuracy = model.score(X_test, y_test)
 
-    print(f"Train accuracy: {fit_accuracy:0.2%}")
-    print(f"Test accuracy: {test_accuracy:0.2%}")
+    log(logfile, f"Train accuracy: {fit_accuracy:0.2%}")
+    log(logfile, f"Test accuracy: {test_accuracy:0.2%}")
 
     return model
