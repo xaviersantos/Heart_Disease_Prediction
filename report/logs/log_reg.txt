@@ -1,0 +1,10 @@
+Logistic Regression
+
+Train accuracy: 87.34%
+Test accuracy: 83.33%
+
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 1 1 0]
+
+The accuracy score achieved using Logistic Regression is: 83.33 %
+

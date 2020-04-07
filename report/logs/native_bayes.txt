@@ -1,0 +1,9 @@
+Naive bayes
+
+Train accuracy: 84.81%
+Test accuracy: 80.00%
+
+predictions= [1 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 0 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+The accuracy score achieved using Naive Bayes is: 80.0 %

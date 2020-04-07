@@ -1,0 +1,24 @@
+K Nearest Neighbors
+
+n_neighbors = 1
+Train accuracy: 100.00%
+Test accuracy: 71.67%
+
+predictions= [0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 1 0 0 0 0 0 0 0 0 1 1 1 1 0 0 1 0 0 1 0]
+
+The accuracy score achieved using KNN is: 71.67 %
+
+Seek optimal 'n_neighbours' parameter:
+
+N neighbors = 2
+Train accuracy: 88.19%
+Test accuracy: 73.33%
+
+N neighbors = 3
+Train accuracy: 88.19%
+Test accuracy: 78.33%
+
+N neighbors = 4
+Train accuracy: 88.19%
+Test accuracy: 78.33%
