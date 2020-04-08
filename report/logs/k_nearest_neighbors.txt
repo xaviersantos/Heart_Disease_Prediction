@@ -7,7 +7,9 @@ Test accuracy: 71.67%
 predictions= [0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0
  1 1 0 1 0 0 0 0 0 0 0 0 1 1 1 1 0 0 1 0 0 1 0]
 
-The accuracy score achieved using KNN is: 71.67 %
+Number of mislabeled points out of a total 60 points : 17
+The accuracy score achieved is: 71.67 %
+------------------------------------------------------------------------------------------
 
 Seek optimal 'n_neighbours' parameter:
 
@@ -15,10 +17,31 @@ N neighbors = 2
 Train accuracy: 88.19%
 Test accuracy: 73.33%
 
+predictions= [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 0]
+
+Number of mislabeled points out of a total 60 points : 16
+The accuracy score achieved is: 73.33 %
+------------------------------------------------------------------------------------------
+
 N neighbors = 3
 Train accuracy: 88.19%
 Test accuracy: 78.33%
 
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 1 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 0 1 0]
+
+Number of mislabeled points out of a total 60 points : 13
+The accuracy score achieved is: 78.33 %
+------------------------------------------------------------------------------------------
+
 N neighbors = 4
 Train accuracy: 88.19%
 Test accuracy: 78.33%
+
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 1 1 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 0]
+
+Number of mislabeled points out of a total 60 points : 13
+The accuracy score achieved is: 78.33 %
+------------------------------------------------------------------------------------------

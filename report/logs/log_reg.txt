@@ -6,5 +6,6 @@ Test accuracy: 83.33%
 predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0
  1 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 1 1 0]
 
-The accuracy score achieved using Logistic Regression is: 83.33 %
-
+Number of mislabeled points out of a total 60 points : 10
+The accuracy score achieved is: 83.33 %
+------------------------------------------------------------------------------------------

@@ -1,9 +1,24 @@
 Naive bayes
 
+GaussianNB
+
 Train accuracy: 84.81%
 Test accuracy: 80.00%
 
 predictions= [1 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
  0 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 1 0 0]
 
-The accuracy score achieved using Naive Bayes is: 80.0 %
+Number of mislabeled points out of a total 60 points : 12
+The accuracy score achieved is: 80.0 %
+------------------------------------------------------------------------------------------
+BernoulliNB
+
+Train accuracy: 85.65%
+Test accuracy: 83.33%
+
+predictions= [0 0 1 0 0 0 1 0 1 0 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 1 0 0 0 1 1 0 0 0 1 1 1 0 0 1 0 1 1 0]
+
+Number of mislabeled points out of a total 60 points : 10
+The accuracy score achieved is: 83.33 %
+------------------------------------------------------------------------------------------

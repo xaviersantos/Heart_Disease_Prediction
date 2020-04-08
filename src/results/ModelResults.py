@@ -1,7 +1,6 @@
 import pandas as pd
 
-from ml.Models import logistic_regression, naive_bayes, k_nearest_neighbors, decision_tree
-from ml.RandomForest import random_forest
+from ml.Models import logistic_regression, naive_bayes, k_nearest_neighbors, decision_tree, random_forest
 
 
 def final_score(X_train, y_train, X_test, y_test):

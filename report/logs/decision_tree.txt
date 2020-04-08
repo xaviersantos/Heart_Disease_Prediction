@@ -7,7 +7,9 @@ Test accuracy: 65.00%
 predictions= [0 1 0 1 0 1 0 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1 0
  1 1 0 0 1 0 0 1 0 0 0 0 1 1 1 1 0 0 1 0 1 0 0]
 
-The accuracy score achieved using Decision Tree is: 65.0 %
+Number of mislabeled points out of a total 60 points : 21
+The accuracy score achieved is: 65.0 %
+------------------------------------------------------------------------------------------
 
 Seek optimal 'max_depth' parameter:
 
@@ -15,10 +17,31 @@ max_depth = 2
 Train accuracy: 79.32%
 Test accuracy: 68.33%
 
+predictions= [0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 19
+The accuracy score achieved is: 68.33 %
+------------------------------------------------------------------------------------------
+
 max_depth = 3
 Train accuracy: 86.08%
 Test accuracy: 80.00%
 
+predictions= [0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 1 0 0 0 0 1 0 0 1 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 12
+The accuracy score achieved is: 80.0 %
+------------------------------------------------------------------------------------------
+
 max_depth = 4
 Train accuracy: 89.45%
 Test accuracy: 71.67%
+
+predictions= [0 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 0 0 0 1 0 1 0 0 1 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 17
+The accuracy score achieved is: 71.67 %
+------------------------------------------------------------------------------------------
