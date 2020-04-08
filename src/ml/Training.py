@@ -37,6 +37,8 @@ def plot_learning_curve(model, X_train, y_train):
     train_sizes, train_scores, test_scores = learning_curve(model,
                                                             X_train,
                                                             y_train,
+                                                            # shuffle training data before taking prefixes
+                                                            shuffle=True,
                                                             # Number of folds in cross-validation
                                                             cv=10,
                                                             # Evaluation metric
@@ -44,7 +46,7 @@ def plot_learning_curve(model, X_train, y_train):
                                                             # Use all computer cores
                                                             n_jobs=-1,
                                                             # 50 different sizes of the training set
-                                                            train_sizes=np.linspace(0.015, 1.0, 50))
+                                                            train_sizes=np.linspace(0.05, 1.0, 50))
 
     # Create means and standard deviations of training set scores
     train_mean = np.mean(train_scores, axis=1)
@@ -66,6 +68,6 @@ def plot_learning_curve(model, X_train, y_train):
     plt.title("Learning Curve")
     plt.xlabel("Training Set Size"), plt.ylabel("Accuracy Score"), plt.legend(loc="best")
     plt.tight_layout()
-    plt.show()
+    # plt.show()
     plt.savefig('report/images/' + type(model).__name__ + '_lc.pdf', bbox_inches='tight')
 

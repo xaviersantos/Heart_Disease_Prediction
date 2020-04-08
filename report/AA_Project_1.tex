@@ -15,7 +15,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Heart Disease}
+\title{Heart Disease Prediction}
 
 \author{\IEEEauthorblockN{Xavier Santos}
     \IEEEauthorblockA{\textit{Departamento de Eletrónica, Telecomunicações e Informática} \\
@@ -27,18 +27,27 @@
 \maketitle
 
 \begin{abstract}
-    This document is a model and instructions for \LaTeX.
-    This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes,
-    or Math in Paper Title or Abstract.
+    This project aims to find the most efficient model to predict the presence of a heart disease on a patient based on 14 preconditions and exam results.
 \end{abstract}
 
 \begin{IEEEkeywords}
-    component, formatting, style, styling, insert
+    machine learning, dataset, heart disease, prediction, logistic regression, naive Bayes, k nearest neighbors, decision tree, random forest
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits.
+In this study, it was analyzed the data form the UCI Machine Learning Repository\cite{b5} regarding patient data used to ascertain the presence of a heart disease. In order to predict said disease were used five models of prediction: Logistic Regression, Naive Bayes, K Nearest Neighbors, Decision Tree and Random Forest.
+
+\section{Dataset}
+This database used contains the data of 303 patients described by 14 attributes each; 5 of which are numerical values while the other 9 represent categories. The "goal" field is represented by a binary value representing the presence or absence of heart disease in the patient.
+
+\section{Data analysis}
+
+\section{Model training and tuning}
+
+\section{Results}
+
+\section{Conclusion}
+
 
 \section{Ease of Use}
 
@@ -143,7 +152,6 @@ surrounding equation.
     \item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
     \item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
 \end{itemize}
-An excellent style manual for science writers is \cite{b7}.
 
 \subsection{Authors and Affiliations}
 \textbf{The class file is designed for, but not limited to, six authors.} A
@@ -239,28 +247,52 @@ that have been accepted for publication should be cited as ``in press'' \cite{b5
 Capitalize only the first word in a paper title, except for proper nouns and
 element symbols.
 
-For papers published in translation journals, please give the English
-citation first, followed by the original foreign-language citation \cite{b6}.
-
 \begin{thebibliography}{00}
-    \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-    \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-    \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-    \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-    \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-    \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-    \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+    \bibitem{b1} Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
+    \bibitem{b2} University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
+    \bibitem{b3} University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
+    \bibitem{b4} V.A. Medical Center, Long Beach and Cleveland Clinic Foundation:Robert Detrano, M.D., Ph.D.
+    \bibitem{b5} Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 \end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+
 \begin{table}[htbp]
-    \caption{Table Type Styles}
+    \caption{Data head}
     \begin{center}
         \resizebox{\columnwidth}{!}{%
             \input{tables/data_head.tex}
         }%
-        \label{tab2}
+        \label{tab}
     \end{center}
 \end{table}
+
+\begin{table}[htbp]
+    \caption{Data description}
+    \begin{center}
+        \resizebox{\columnwidth}{!}{%
+            \input{tables/data_describe.tex}
+        }%
+        \label{tab}
+    \end{center}
+\end{table}
+
+\begin{table}[htbp]
+    \caption{Data correlation}
+    \begin{center}
+        \input{tables/data_correlation.tex}
+        \label{tab}
+    \end{center}
+\end{table}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth]{images/view_categorical.pdf}}
+    \caption{Example of a figure caption.}
+    \label{fig}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=\linewidth]{images/correlation_scatter.pdf}}
+    \caption{Example of a figure caption.}
+    \label{fig}
+\end{figure}
+
 \end{document}

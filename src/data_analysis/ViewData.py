@@ -8,20 +8,18 @@ def show_data(data):
     # head
     print(data.head(10))
     with open('report/tables/data_head.tex', 'w') as tf:
-        tf.write(data.head(10).to_latex())
+        tf.write(data.head(10).to_latex(column_format='l'+'c'*14))
 
     # descriptions
     print(data.describe())
     with open('report/tables/data_describe.tex', 'w') as tf:
-        tf.write(data.describe().to_latex())
+        tf.write(data.describe().to_latex(column_format='l'+'c'*14, float_format="%.2f"))
 
     # info
     print(data.info())
 
     # class distribution
     print(data.groupby('Diagnosis').size())
-    with open('report/tables/data_class_distribution.tex', 'w') as tf:
-        tf.write(data.groupby('Diagnosis').size().to_latex())
 
     # data correlation
     print(data.corr()["Diagnosis"].abs().sort_values(ascending=False))

@@ -4,13 +4,13 @@ from data_analysis import *
 def box_diagrams(data):
     data.plot(kind='box', subplots=True, layout=(3, 4), sharex=False, sharey=False)
     plt.savefig('report/images/box_whisker.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
 
 
 def histogram(data):
     data.hist(bins=15, figsize=(10, 10), layout=(3, 2))
     plt.savefig('report/images/histogram.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
 
 
 def view_categorical(data):
@@ -21,7 +21,7 @@ def view_categorical(data):
         for label in subplot.get_xticklabels():
             label.set_rotation(90)
     plt.savefig('report/images/view_categorical.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
 
 
 def percentage_general(data):
@@ -35,7 +35,7 @@ def percentage_general(data):
 
     plt.title("Percentage of heart problems in patients")
     plt.savefig('report/images/percentage_general.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
     print("\nPercentage of patience without heart problems: " + str(round(num_count[0] * 100 / 303, 2)))
     print("Percentage of patience with heart problems: " + str(round(num_count[1] * 100 / 303, 2)))
 
@@ -47,7 +47,7 @@ def percentage_by_sex(data):
     plt.title("Percentage of heart disease incidence in each gender")
     plt.ylabel("Percentage")
     plt.savefig('report/images/percentage_by_sex.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
     num_count = data.Sex.value_counts()
     print("\nPercentage of men that have heart problems: " + str(round(num_count[1] * 100 / 303, 2)))
     print("Percentage of women that have heart problems: " + str(round(num_count[0] * 100 / 303, 2)))
@@ -56,7 +56,7 @@ def percentage_by_sex(data):
 def age_distribution(data):
     sns.distplot(data['Age'])
     plt.savefig('report/images/age_distribution.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
 
 
 def correlation(data):
@@ -75,10 +75,10 @@ def correlation(data):
     sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
                 square=True, linewidths=.5, cbar_kws={"shrink": .5})
     plt.savefig('report/images/correlation_heatmap.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
 
 
 def scatter_pairs(data):
     sns.pairplot(data, hue="Diagnosis", palette="husl")
     plt.savefig('report/images/correlation_scatter.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()

@@ -17,7 +17,7 @@ def logistic_regression(X_train, y_train, X_test, y_test):
 
     logfile.close()
 
-    #plot_learning_curve(log_reg, X_train, y_train)
+    plot_learning_curve(log_reg, X_train, y_train)
 
     return log_reg
 
@@ -95,17 +95,18 @@ def random_forest(X_train, y_train, X_test, y_test):
 
     # Random forest with 100 trees
     rf = train_model(X_train, y_train, X_test, y_test,
-                     RandomForestClassifier, logfile, max_depth=1, n_estimators=100, random_state=0)
+                     RandomForestClassifier, logfile, max_depth=1, n_estimators=100, random_state=0, n_jobs=-1)
 
     log(logfile, "\nSeek optimal 'max_depth' parameter:")
     for max_depth in range(2, 10):
         log(logfile, "\nmax_depth = " + str(max_depth))
         tmp = train_model(X_train, y_train, X_test, y_test,
-                          RandomForestClassifier, logfile, max_depth=max_depth, n_estimators=100, random_state=0)
+                          RandomForestClassifier, logfile, max_depth=max_depth, n_estimators=100, random_state=0,
+                          n_jobs=-1)
 
-        if tmp.score(X_test, y_test) >= rf.score(X_test, y_test):
+        if tmp.score(X_test, y_test) > rf.score(X_test, y_test):
             rf = tmp
-        else:
+        elif tmp.score(X_test, y_test) != rf.score(X_test, y_test):
             break
 
     logfile.close()
@@ -113,4 +114,3 @@ def random_forest(X_train, y_train, X_test, y_test):
     plot_learning_curve(rf, X_train, y_train)
 
     return rf
-
