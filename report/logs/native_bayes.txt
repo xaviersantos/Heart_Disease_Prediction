@@ -10,6 +10,22 @@ predictions= [1 0 1 0 0 0 1 0 1 1 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 12
 The accuracy score achieved is: 80.0 %
+Confusion Matrix: 
+[[26  4]
+ [ 8 22]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.76      0.87      0.81        30
+           1       0.85      0.73      0.79        30
+
+    accuracy                           0.80        60
+   macro avg       0.81      0.80      0.80        60
+weighted avg       0.81      0.80      0.80        60
+
+False Negative Rate: 26.666666666666668
+False Positive Rate: 13.333333333333334
 ------------------------------------------------------------------------------------------
 BernoulliNB
 
@@ -21,4 +37,20 @@ predictions= [0 0 1 0 0 0 1 0 1 0 1 0 1 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 10
 The accuracy score achieved is: 83.33 %
+Confusion Matrix: 
+[[27  3]
+ [ 7 23]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.79      0.90      0.84        30
+           1       0.88      0.77      0.82        30
+
+    accuracy                           0.83        60
+   macro avg       0.84      0.83      0.83        60
+weighted avg       0.84      0.83      0.83        60
+
+False Negative Rate: 23.333333333333332
+False Positive Rate: 10.0
 ------------------------------------------------------------------------------------------

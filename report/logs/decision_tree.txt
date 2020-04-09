@@ -9,6 +9,22 @@ predictions= [0 1 0 1 0 1 0 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 1 1 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 21
 The accuracy score achieved is: 65.0 %
+Confusion Matrix: 
+[[21  9]
+ [12 18]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.64      0.70      0.67        30
+           1       0.67      0.60      0.63        30
+
+    accuracy                           0.65        60
+   macro avg       0.65      0.65      0.65        60
+weighted avg       0.65      0.65      0.65        60
+
+False Negative Rate: 40.0
+False Positive Rate: 30.0
 ------------------------------------------------------------------------------------------
 
 Seek optimal 'max_depth' parameter:
@@ -22,6 +38,22 @@ predictions= [0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 
 
 Number of mislabeled points out of a total 60 points : 19
 The accuracy score achieved is: 68.33 %
+Confusion Matrix: 
+[[28  2]
+ [17 13]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.62      0.93      0.75        30
+           1       0.87      0.43      0.58        30
+
+    accuracy                           0.68        60
+   macro avg       0.74      0.68      0.66        60
+weighted avg       0.74      0.68      0.66        60
+
+False Negative Rate: 56.666666666666664
+False Positive Rate: 6.666666666666667
 ------------------------------------------------------------------------------------------
 
 max_depth = 3
@@ -33,6 +65,22 @@ predictions= [0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 12
 The accuracy score achieved is: 80.0 %
+Confusion Matrix: 
+[[27  3]
+ [ 9 21]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.75      0.90      0.82        30
+           1       0.88      0.70      0.78        30
+
+    accuracy                           0.80        60
+   macro avg       0.81      0.80      0.80        60
+weighted avg       0.81      0.80      0.80        60
+
+False Negative Rate: 30.0
+False Positive Rate: 10.0
 ------------------------------------------------------------------------------------------
 
 max_depth = 4
@@ -44,4 +92,20 @@ predictions= [0 0 1 1 0 1 0 1 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 17
 The accuracy score achieved is: 71.67 %
+Confusion Matrix: 
+[[23  7]
+ [10 20]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.70      0.77      0.73        30
+           1       0.74      0.67      0.70        30
+
+    accuracy                           0.72        60
+   macro avg       0.72      0.72      0.72        60
+weighted avg       0.72      0.72      0.72        60
+
+False Negative Rate: 33.333333333333336
+False Positive Rate: 23.333333333333332
 ------------------------------------------------------------------------------------------

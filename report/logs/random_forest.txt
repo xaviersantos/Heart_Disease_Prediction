@@ -1,0 +1,137 @@
+Random Forest
+
+Train accuracy: 84.81%
+Test accuracy: 75.00%
+
+predictions= [0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 15
+The accuracy score achieved is: 75.0 %
+Confusion Matrix: 
+[[28  2]
+ [13 17]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.68      0.93      0.79        30
+           1       0.89      0.57      0.69        30
+
+    accuracy                           0.75        60
+   macro avg       0.79      0.75      0.74        60
+weighted avg       0.79      0.75      0.74        60
+
+False Negative Rate: 43.333333333333336
+False Positive Rate: 6.666666666666667
+------------------------------------------------------------------------------------------
+
+Seek optimal 'max_depth' parameter:
+
+max_depth = 2
+Train accuracy: 86.92%
+Test accuracy: 75.00%
+
+predictions= [0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 15
+The accuracy score achieved is: 75.0 %
+Confusion Matrix: 
+[[28  2]
+ [13 17]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.68      0.93      0.79        30
+           1       0.89      0.57      0.69        30
+
+    accuracy                           0.75        60
+   macro avg       0.79      0.75      0.74        60
+weighted avg       0.79      0.75      0.74        60
+
+False Negative Rate: 43.333333333333336
+False Positive Rate: 6.666666666666667
+------------------------------------------------------------------------------------------
+
+max_depth = 3
+Train accuracy: 87.76%
+Test accuracy: 80.00%
+
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 1 0 0 0 0 1 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 12
+The accuracy score achieved is: 80.0 %
+Confusion Matrix: 
+[[28  2]
+ [10 20]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.74      0.93      0.82        30
+           1       0.91      0.67      0.77        30
+
+    accuracy                           0.80        60
+   macro avg       0.82      0.80      0.80        60
+weighted avg       0.82      0.80      0.80        60
+
+False Negative Rate: 33.333333333333336
+False Positive Rate: 6.666666666666667
+------------------------------------------------------------------------------------------
+
+max_depth = 4
+Train accuracy: 89.87%
+Test accuracy: 80.00%
+
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 1 0 0 0 0 1 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 12
+The accuracy score achieved is: 80.0 %
+Confusion Matrix: 
+[[28  2]
+ [10 20]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.74      0.93      0.82        30
+           1       0.91      0.67      0.77        30
+
+    accuracy                           0.80        60
+   macro avg       0.82      0.80      0.80        60
+weighted avg       0.82      0.80      0.80        60
+
+False Negative Rate: 33.333333333333336
+False Positive Rate: 6.666666666666667
+------------------------------------------------------------------------------------------
+
+max_depth = 5
+Train accuracy: 94.09%
+Test accuracy: 78.33%
+
+predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0
+ 1 1 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 0 1 0 1 0 0]
+
+Number of mislabeled points out of a total 60 points : 13
+The accuracy score achieved is: 78.33 %
+Confusion Matrix: 
+[[28  2]
+ [11 19]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.72      0.93      0.81        30
+           1       0.90      0.63      0.75        30
+
+    accuracy                           0.78        60
+   macro avg       0.81      0.78      0.78        60
+weighted avg       0.81      0.78      0.78        60
+
+False Negative Rate: 36.666666666666664
+False Positive Rate: 6.666666666666667
+------------------------------------------------------------------------------------------

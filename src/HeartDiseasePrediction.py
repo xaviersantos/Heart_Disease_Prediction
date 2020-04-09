@@ -1,8 +1,9 @@
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
 
-from data_analysis.ViewData import *
 from data_analysis.PreAnalysis import *
+from data_analysis.ViewData import *
 from results.ModelResults import final_score
 
 

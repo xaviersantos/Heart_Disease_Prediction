@@ -9,6 +9,22 @@ predictions= [0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 17
 The accuracy score achieved is: 71.67 %
+Confusion Matrix: 
+[[25  5]
+ [12 18]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.68      0.83      0.75        30
+           1       0.78      0.60      0.68        30
+
+    accuracy                           0.72        60
+   macro avg       0.73      0.72      0.71        60
+weighted avg       0.73      0.72      0.71        60
+
+False Negative Rate: 40.0
+False Positive Rate: 16.666666666666668
 ------------------------------------------------------------------------------------------
 
 Seek optimal 'n_neighbours' parameter:
@@ -22,6 +38,22 @@ predictions= [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 16
 The accuracy score achieved is: 73.33 %
+Confusion Matrix: 
+[[28  2]
+ [14 16]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.67      0.93      0.78        30
+           1       0.89      0.53      0.67        30
+
+    accuracy                           0.73        60
+   macro avg       0.78      0.73      0.72        60
+weighted avg       0.78      0.73      0.72        60
+
+False Negative Rate: 46.666666666666664
+False Positive Rate: 6.666666666666667
 ------------------------------------------------------------------------------------------
 
 N neighbors = 3
@@ -33,6 +65,22 @@ predictions= [0 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 1 0 0 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 13
 The accuracy score achieved is: 78.33 %
+Confusion Matrix: 
+[[26  4]
+ [ 9 21]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.74      0.87      0.80        30
+           1       0.84      0.70      0.76        30
+
+    accuracy                           0.78        60
+   macro avg       0.79      0.78      0.78        60
+weighted avg       0.79      0.78      0.78        60
+
+False Negative Rate: 30.0
+False Positive Rate: 13.333333333333334
 ------------------------------------------------------------------------------------------
 
 N neighbors = 4
@@ -44,4 +92,20 @@ predictions= [0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 0 0 0 0 1 0 1 
 
 Number of mislabeled points out of a total 60 points : 13
 The accuracy score achieved is: 78.33 %
+Confusion Matrix: 
+[[28  2]
+ [11 19]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.72      0.93      0.81        30
+           1       0.90      0.63      0.75        30
+
+    accuracy                           0.78        60
+   macro avg       0.81      0.78      0.78        60
+weighted avg       0.81      0.78      0.78        60
+
+False Negative Rate: 36.666666666666664
+False Positive Rate: 6.666666666666667
 ------------------------------------------------------------------------------------------

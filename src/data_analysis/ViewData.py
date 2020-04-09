@@ -1,4 +1,9 @@
+from scipy.stats import stats
+
 from data_analysis import *
+from utils import log
+import numpy as np
+import pandas as pd
 
 
 def show_data(data):
@@ -28,12 +33,14 @@ def show_data(data):
 
 
 def outliers(data):
+    logfile = open("outliers.txt", 'w')
+    log(logfile, "Outliers\n")
+
     z = np.abs(stats.zscore(data))
     threshold = 3
     res = np.where(z > threshold)
-    print("Length:", len(res[0]), ":", len(res[1]))
-    print("Rows:", res[0])
-    print("Columns:", res[1])
+    log(logfile, "Rows: " + str(res[0]))
+    log(logfile, "Columns: " + str(res[1]))
 
     outliers_row = []
     for j in res[0]:
@@ -41,6 +48,9 @@ def outliers(data):
         for i in data.columns:
             r.append(data[i][j])
         outliers_row.append(r)
+
+    logfile.close()
+
     return pd.DataFrame(data=outliers_row, columns=data.columns)
 
 

@@ -15,9 +15,9 @@ def logistic_regression(X_train, y_train, X_test, y_test):
     log_reg = train_model(X_train, y_train, X_test, y_test,
                           LogisticRegression, logfile, random_state=0, solver='newton-cg', multi_class='multinomial')
 
-    logfile.close()
-
     plot_learning_curve(log_reg, X_train, y_train)
+
+    logfile.close()
 
     return log_reg
 
@@ -32,13 +32,14 @@ def naive_bayes(X_train, y_train, X_test, y_test):
     log(logfile, "BernoulliNB\n")
     bnb = train_model(X_train, y_train, X_test, y_test, BernoulliNB, logfile)
 
-    logfile.close()
-
     if gnb.score(X_test, y_test) > bnb.score(X_test, y_test):
         nb = gnb
-    nb = bnb
+    else:
+        nb = bnb
 
     plot_learning_curve(nb, X_train, y_train)
+
+    logfile.close()
 
     return nb
 
@@ -59,9 +60,9 @@ def k_nearest_neighbors(X_train, y_train, X_test, y_test):
         else:
             break
 
-    logfile.close()
-
     plot_learning_curve(knn, X_train, y_train)
+
+    logfile.close()
 
     return knn
 
@@ -82,9 +83,9 @@ def decision_tree(X_train, y_train, X_test, y_test):
         else:
             break
 
-    logfile.close()
-
     plot_learning_curve(dt, X_train, y_train)
+
+    logfile.close()
 
     return dt
 
@@ -109,8 +110,8 @@ def random_forest(X_train, y_train, X_test, y_test):
         elif tmp.score(X_test, y_test) != rf.score(X_test, y_test):
             break
 
-    logfile.close()
-
     plot_learning_curve(rf, X_train, y_train)
+
+    logfile.close()
 
     return rf
