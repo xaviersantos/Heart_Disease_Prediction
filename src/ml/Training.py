@@ -73,16 +73,16 @@ def plot_learning_curve(model, X_train, y_train):
     plt.title("Learning Curve")
     plt.xlabel("Training Set Size"), plt.ylabel("Accuracy Score"), plt.legend(loc="best")
     plt.tight_layout()
-    # plt.show()
     plt.savefig('report/images/' + type(model).__name__ + '_lc.pdf', bbox_inches='tight')
+    plt.close()
 
 
 def result_analysis(y_test, y_pred, logfile):
     matrix = confusion_matrix(y_test, y_pred)
     log(logfile, "Confusion Matrix: \n" + str(matrix))
     sns.heatmap(matrix, annot=True, fmt="d")
-    # plt.show()
     plt.savefig('report/images/' + os.path.basename(logfile.name) + '_confmtarix.pdf', bbox_inches='tight')
+    plt.close()
 
     report = classification_report(y_test, y_pred)
     log(logfile,'\nClassification report on full data set:\n' + str(report))

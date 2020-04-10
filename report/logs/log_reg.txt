@@ -1,28 +1,27 @@
 Logistic Regression
 
-Train accuracy: 86.36%
-Test accuracy: 78.69%
+Train accuracy: 82.64%
+Test accuracy: 73.77%
 
-predictions= [0. 1. 1. 1. 0. 0. 1. 1. 1. 0. 1. 0. 1. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 1.
- 0. 0. 0. 1. 1. 1. 0. 0. 0. 1. 1. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 1.
- 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0.]
+predictions= [0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 1 1 1 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0]
 
-Number of mislabeled points out of a total 61 points : 13
-The accuracy score achieved is: 78.69 %
+Number of mislabeled points out of a total 61 points : 16
+The accuracy score achieved is: 73.77 %
 Confusion Matrix: 
-[[31  4]
+[[28  7]
  [ 9 17]]
 
 Classification report on full data set:
               precision    recall  f1-score   support
 
-         0.0       0.78      0.89      0.83        35
-         1.0       0.81      0.65      0.72        26
+           0       0.76      0.80      0.78        35
+           1       0.71      0.65      0.68        26
 
-    accuracy                           0.79        61
-   macro avg       0.79      0.77      0.78        61
-weighted avg       0.79      0.79      0.78        61
+    accuracy                           0.74        61
+   macro avg       0.73      0.73      0.73        61
+weighted avg       0.74      0.74      0.74        61
 
 False Negative Rate: 34.61538461538461
-False Positive Rate: 11.428571428571429
+False Positive Rate: 20.0
 ------------------------------------------------------------------------------------------

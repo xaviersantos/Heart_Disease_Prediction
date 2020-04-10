@@ -24,18 +24,19 @@ def load_dataset(path):
     data = pd.read_csv(path, names=names, na_values='?', converters={'Diagnosis': lambda x: int(int(x) > 0)})
 
     # replace the rows with NaN results with the median
-    data = replace_missing_value(data, names)
+    data = fill(data, numerical, categorical)
 
     return data, data[numerical], data[categorical]
 
 
-def replace_missing_value(data, features):
-    imputer = SimpleImputer(strategy='median')
-    df_num = data[features]
-    imputer.fit(df_num)
-    X = imputer.transform(df_num)
-    res_def = pd.DataFrame(X, columns=df_num.columns)
-    return res_def
+def fill(data, numerical, categorical):
+    for feature in categorical:
+        data.fillna(data[feature].value_counts(), inplace=True)
+
+    for feature in numerical:
+        data.fillna(data[feature].mean(), inplace=True)
+
+    return data
 
 
 def split_dataset(data):

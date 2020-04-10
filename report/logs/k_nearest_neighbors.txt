@@ -2,58 +2,110 @@ K Nearest Neighbors
 
 n_neighbors = 1
 Train accuracy: 100.00%
-Test accuracy: 68.85%
+Test accuracy: 65.57%
 
-predictions= [0. 0. 0. 1. 0. 1. 1. 0. 1. 0. 1. 1. 1. 1. 1. 0. 1. 0. 0. 0. 0. 0. 0. 1.
- 0. 0. 1. 1. 1. 0. 0. 0. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 1.
- 0. 0. 1. 0. 0. 1. 1. 0. 1. 0. 0. 1. 1.]
+predictions= [0 0 0 1 0 1 1 0 1 0 1 1 1 1 1 0 1 0 0 0 0 0 0 1 0 0 1 1 1 0 1 0 0 1 0 0 0
+ 1 1 0 0 1 1 0 0 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 1]
 
-Number of mislabeled points out of a total 61 points : 19
-The accuracy score achieved is: 68.85 %
+Number of mislabeled points out of a total 61 points : 21
+The accuracy score achieved is: 65.57 %
 Confusion Matrix: 
-[[26  9]
+[[24 11]
  [10 16]]
 
 Classification report on full data set:
               precision    recall  f1-score   support
 
-         0.0       0.72      0.74      0.73        35
-         1.0       0.64      0.62      0.63        26
+           0       0.71      0.69      0.70        35
+           1       0.59      0.62      0.60        26
 
-    accuracy                           0.69        61
-   macro avg       0.68      0.68      0.68        61
-weighted avg       0.69      0.69      0.69        61
+    accuracy                           0.66        61
+   macro avg       0.65      0.65      0.65        61
+weighted avg       0.66      0.66      0.66        61
 
 False Negative Rate: 38.46153846153846
-False Positive Rate: 25.714285714285715
+False Positive Rate: 31.428571428571427
 ------------------------------------------------------------------------------------------
 
 Seek optimal 'n_neighbours' parameter:
 
 N neighbors = 2
-Train accuracy: 76.45%
-Test accuracy: 68.85%
+Train accuracy: 76.03%
+Test accuracy: 67.21%
 
-predictions= [0. 0. 0. 1. 0. 1. 1. 0. 1. 0. 1. 0. 1. 1. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0.
- 0. 0. 1. 1. 0. 0. 0. 0. 0. 1. 0. 0. 0. 1. 1. 0. 0. 0. 1. 0. 0. 0. 0. 0.
- 0. 0. 1. 0. 0. 0. 0. 0. 1. 0. 0. 1. 0.]
+predictions= [0 0 0 1 0 1 1 0 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0
+ 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0]
 
-Number of mislabeled points out of a total 61 points : 19
-The accuracy score achieved is: 68.85 %
+Number of mislabeled points out of a total 61 points : 20
+The accuracy score achieved is: 67.21 %
 Confusion Matrix: 
-[[30  5]
+[[29  6]
  [14 12]]
 
 Classification report on full data set:
               precision    recall  f1-score   support
 
-         0.0       0.68      0.86      0.76        35
-         1.0       0.71      0.46      0.56        26
+           0       0.67      0.83      0.74        35
+           1       0.67      0.46      0.55        26
 
-    accuracy                           0.69        61
-   macro avg       0.69      0.66      0.66        61
-weighted avg       0.69      0.69      0.67        61
+    accuracy                           0.67        61
+   macro avg       0.67      0.65      0.64        61
+weighted avg       0.67      0.67      0.66        61
 
 False Negative Rate: 53.84615384615385
-False Positive Rate: 14.285714285714286
+False Positive Rate: 17.142857142857142
+------------------------------------------------------------------------------------------
+
+N neighbors = 3
+Train accuracy: 76.03%
+Test accuracy: 70.49%
+
+predictions= [0 1 1 1 0 1 1 0 1 0 1 0 1 1 0 1 1 0 0 1 0 0 0 1 0 0 1 1 1 1 1 0 0 1 0 0 0
+ 1 1 0 0 1 1 0 0 0 0 1 0 1 1 0 0 0 0 0 1 0 0 1 0]
+
+Number of mislabeled points out of a total 61 points : 18
+The accuracy score achieved is: 70.49 %
+Confusion Matrix: 
+[[25 10]
+ [ 8 18]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.76      0.71      0.74        35
+           1       0.64      0.69      0.67        26
+
+    accuracy                           0.70        61
+   macro avg       0.70      0.70      0.70        61
+weighted avg       0.71      0.70      0.71        61
+
+False Negative Rate: 30.76923076923077
+False Positive Rate: 28.571428571428573
+------------------------------------------------------------------------------------------
+
+N neighbors = 4
+Train accuracy: 73.55%
+Test accuracy: 65.57%
+
+predictions= [0 0 1 1 0 1 1 0 1 0 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 0 1 1 0 1 1 0 0 1 0 0 0
+ 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0]
+
+Number of mislabeled points out of a total 61 points : 21
+The accuracy score achieved is: 65.57 %
+Confusion Matrix: 
+[[27  8]
+ [13 13]]
+
+Classification report on full data set:
+              precision    recall  f1-score   support
+
+           0       0.68      0.77      0.72        35
+           1       0.62      0.50      0.55        26
+
+    accuracy                           0.66        61
+   macro avg       0.65      0.64      0.64        61
+weighted avg       0.65      0.66      0.65        61
+
+False Negative Rate: 50.0
+False Positive Rate: 22.857142857142858
 ------------------------------------------------------------------------------------------
