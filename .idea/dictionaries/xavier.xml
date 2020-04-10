@@ -6,6 +6,7 @@
       <w>downsloping</w>
       <w>heatmap</w>
       <w>husl</w>
+      <w>imputer</w>
       <w>logreg</w>
       <w>matplotlib</w>
       <w>preprocessing</w>

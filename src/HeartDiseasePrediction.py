@@ -1,15 +1,12 @@
+from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import pandas as pd
 
 from data_analysis.PreAnalysis import *
 from data_analysis.ViewData import *
-from results.ModelResults import final_score
+from results.ModelResults import start_training, start_prediction
 
 
-def load_dataset():
-    path = "Dataset/processed.cleveland.data"
-
+def load_dataset(path):
     names = ['Age', 'Sex', 'ChestPainType', 'RestingBloodPressure', 'Cholesterol', 'FastingBloodSugar', 'RestingECG',
              'MaxHeartRate', 'ExerciseInducedAngina', 'ST_depression', 'ST_slope', 'NumMajorVessels',
              'ThalliumStressTest', 'Diagnosis']
@@ -24,12 +21,21 @@ def load_dataset():
     ]
 
     # the result(num) is changed to binary (0=no heart problems; 1=heart problems) and the '?' is considered NaN
-    data = pd.read_csv(path, names=names, na_values=["?"], converters={'Diagnosis': lambda x: int(int(x) > 0)})
+    data = pd.read_csv(path, names=names, na_values='?', converters={'Diagnosis': lambda x: int(int(x) > 0)})
 
-    # drop the rows with NaN results
-    data.dropna(inplace=True)
+    # replace the rows with NaN results with the median
+    data = replace_missing_value(data, names)
 
     return data, data[numerical], data[categorical]
+
+
+def replace_missing_value(data, features):
+    imputer = SimpleImputer(strategy='median')
+    df_num = data[features]
+    imputer.fit(df_num)
+    X = imputer.transform(df_num)
+    res_def = pd.DataFrame(X, columns=df_num.columns)
+    return res_def
 
 
 def split_dataset(data):
@@ -37,29 +43,20 @@ def split_dataset(data):
     target = data["Diagnosis"]
 
     X_train, X_test, y_train, y_test = train_test_split(predictors, target, test_size=0.20, random_state=0)
-    print("Training features have {0} records and Testing features have {1} records.".format(y_train.shape[0], y_test.shape[0]))
+    print("Training features have {0} records and Testing features have {1} records.".format(y_train.shape[0],
+                                                                                             y_test.shape[0]))
 
     return X_train, X_test, y_train, y_test
 
 
-def scaling_data(data):
-    data = pd.get_dummies(data, columns=['Sex', 'ChestPainType', 'FastingBloodSugar', 'RestingECG',
-                                         'ExerciseInducedAngina', 'ST_slope', 'NumMajorVessels', 'ThalliumStressTest'])
-    standardScaler = StandardScaler()
-    columns_to_scale = ['Age', 'RestingBloodPressure', 'Cholesterol', 'MaxHeartRate', 'ST_depression']
-    data[columns_to_scale] = standardScaler.fit_transform(data[columns_to_scale])
-
-    return data
-
-
 def main():
-    data, data_numerical, data_categorical = load_dataset()
+    data, data_numerical, data_categorical = load_dataset("dataset/processed.cleveland.data")
 
     data_pd = pretty_data(data.copy())
     data_categorical = pretty_data(data_categorical.copy())
 
     outliers_data = outliers(data)
-    outliers_data.to_csv("Dataset/outliers.csv")
+    outliers_data.to_csv("dataset/outliers.csv")
 
     show_data(data)
     histogram(data_numerical)
@@ -71,10 +68,36 @@ def main():
     scatter_pairs(data_numerical.join(data_pd['Diagnosis']))
     correlation(data_pd)
 
-    data_processed = scaling_data(data.copy())
-    X_train, X_test, y_train, y_test = split_dataset(data_processed)
+    X_train, X_test, y_train, y_test = split_dataset(data.copy())
 
-    final_score(X_train, y_train, X_test, y_test)
+    models = start_training(X_train, y_train, X_test, y_test)
+
+    # show the results of the models applied to the original dataset
+    logfile = open("report/logs/original_summary.txt", 'w')
+    log(logfile, "ORIGINAL (\\W TRAINING SET) DATASET SUMMARY\n")
+    start_prediction(models, data, logfile)
+    logfile.close()
+
+    # show the results of the models applied to the swiss dataset
+    logfile = open("report/logs/switzerland_summary.txt", 'w')
+    log(logfile, "SWISS DATASET SUMMARY\n")
+    switzerland_data = load_dataset("dataset/processed.switzerland.data")
+    start_prediction(models, switzerland_data[0], logfile)
+    logfile.close()
+
+    # show the results of the models applied to the hungarian dataset
+    logfile = open("report/logs/hungary_summary.txt", 'w')
+    log(logfile, "HUNGARIAN DATASET SUMMARY\n")
+    hungary_data = load_dataset("dataset/processed.hungarian.data")
+    start_prediction(models, hungary_data[0], logfile)
+    logfile.close()
+
+    # show the results of the models applied to the hungarian dataset
+    logfile = open("report/logs/va_summary.txt", 'w')
+    log(logfile, "V.A. MEDICAL CENTER DATASET SUMMARY\n")
+    va_data = load_dataset("dataset/processed.va.data")
+    start_prediction(models, va_data[0], logfile)
+    logfile.close()
 
 
 if __name__ == '__main__':

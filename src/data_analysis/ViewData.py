@@ -1,6 +1,5 @@
-from scipy.stats import stats
+from scipy import stats
 
-from data_analysis import *
 from utils import log
 import numpy as np
 import pandas as pd
