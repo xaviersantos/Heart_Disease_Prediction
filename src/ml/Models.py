@@ -13,7 +13,7 @@ def logistic_regression(X_train, y_train, X_test, y_test):
     log(logfile, "Logistic Regression\n")
 
     log_reg = train_model(X_train, y_train, X_test, y_test,
-                          LogisticRegression, logfile, random_state=0, solver='newton-cg', multi_class='multinomial')
+                          LogisticRegression, logfile, random_state=0, solver='liblinear')
 
     plot_learning_curve(log_reg, X_train, y_train)
 
@@ -23,7 +23,7 @@ def logistic_regression(X_train, y_train, X_test, y_test):
 
 
 def naive_bayes(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/native_bayes.txt", "w")
+    logfile = open("report/logs/naive_bayes.txt", "w")
     log(logfile, "Naive bayes\n")
 
     log(logfile, "GaussianNB\n")
@@ -80,8 +80,8 @@ def decision_tree(X_train, y_train, X_test, y_test):
         tmp = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, logfile, max_depth=max_depth, random_state=0)
         if tmp.score(X_test, y_test) > dt.score(X_test, y_test):
             dt = tmp
-        else:
-            break
+        # else:
+        #     break
 
     plot_learning_curve(dt, X_train, y_train)
 
@@ -107,8 +107,8 @@ def random_forest(X_train, y_train, X_test, y_test):
 
         if tmp.score(X_test, y_test) > rf.score(X_test, y_test):
             rf = tmp
-        elif tmp.score(X_test, y_test) != rf.score(X_test, y_test):
-            break
+        # elif tmp.score(X_test, y_test) != rf.score(X_test, y_test):
+        #     break
 
     plot_learning_curve(rf, X_train, y_train)
 

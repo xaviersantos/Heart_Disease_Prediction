@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  10 APR 2020 16:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  11 APR 2020 15:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -529,21 +529,114 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Try loading font information for U+msb on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) (/home/xavier/Desktop/AA/project1/report/tables/data_describe.tex) (/home/xavier/Desktop/AA/project1/report/tables/data_correlation.tex)
-<images/correlation_scatter.pdf, id=1, 1002.77707pt x 913.21553pt>
+))
+<images/age_distribution.pdf, id=1, 402.28856pt x 312.02145pt>
+File: images/age_distribution.pdf Graphic file (type pdf)
+<use images/age_distribution.pdf>
+Package pdftex.def Info: images/age_distribution.pdf  used on input line 61.
+(pdftex.def)             Requested size: 176.39923pt x 136.81851pt.
+<images/correlation_heatmap.pdf, id=2, 697.66359pt x 622.93918pt>
+File: images/correlation_heatmap.pdf Graphic file (type pdf)
+<use images/correlation_heatmap.pdf>
+Package pdftex.def Info: images/correlation_heatmap.pdf  used on input line 69.
+(pdftex.def)             Requested size: 176.39923pt x 157.50238pt.
+ (/home/xavier/Desktop/AA/project1/report/tables/data_correlation.tex)
+<images/correlation_scatter.pdf, id=3, 1002.77707pt x 913.21553pt>
 File: images/correlation_scatter.pdf Graphic file (type pdf)
 <use images/correlation_scatter.pdf>
-Package pdftex.def Info: images/correlation_scatter.pdf  used on input line 80.
-(pdftex.def)             Requested size: 201.60077pt x 183.58742pt.
+Package pdftex.def Info: images/correlation_scatter.pdf  used on input line 86.
+(pdftex.def)             Requested size: 252.0pt x 229.48775pt.
+
+Underfull \vbox (badness 3240) has occurred while \output is active []
+
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- </home/xavier/Desktop/AA/project1/report/images/correlation_scatter.pdf>]
-<images/percentage_general.pdf, id=95, 412.81226pt x 327.20317pt>
-File: images/percentage_general.pdf Graphic file (type pdf)
-<use images/percentage_general.pdf>
-Package pdftex.def Info: images/percentage_general.pdf  used on input line 88.
-(pdftex.def)             Requested size: 176.39923pt x 139.82089pt.
+ </home/xavier/Desktop/AA/project1/report/images/age_distribution.pdf> </home/xavier/Desktop/AA/project1/report/images/correlation_heatmap.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/correlation_heatmap.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Underfull \vbox (badness 7613) has occurred while \output is active []
+
+<images/LogisticRegression_lc.pdf, id=74, 454.95784pt x 337.89111pt>
+File: images/LogisticRegression_lc.pdf Graphic file (type pdf)
+<use images/LogisticRegression_lc.pdf>
+Package pdftex.def Info: images/LogisticRegression_lc.pdf  used on input line 102.
+(pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
+<images/log_reg_cm.pdf, id=75, 378.60957pt x 298.29831pt>
+File: images/log_reg_cm.pdf Graphic file (type pdf)
+<use images/log_reg_cm.pdf>
+Package pdftex.def Info: images/log_reg_cm.pdf  used on input line 115.
+(pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
+ [2 </home/xavier/Desktop/AA/project1/report/images/correlation_scatter.pdf> </home/xavier/Desktop/AA/project1/report/images/LogisticRegression_lc.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/LogisticRegression_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/log_reg_cm.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/log_reg_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<images/BernoulliNB_lc.pdf, id=215, 455.01744pt x 337.89111pt>
+File: images/BernoulliNB_lc.pdf Graphic file (type pdf)
+<use images/BernoulliNB_lc.pdf>
+Package pdftex.def Info: images/BernoulliNB_lc.pdf  used on input line 134.
+(pdftex.def)             Requested size: 226.79846pt x 168.41408pt.
+<images/naive_bayes_cm.pdf, id=216, 378.60957pt x 298.29831pt>
+File: images/naive_bayes_cm.pdf Graphic file (type pdf)
+<use images/naive_bayes_cm.pdf>
+Package pdftex.def Info: images/naive_bayes_cm.pdf  used on input line 147.
+(pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
+<images/KNeighborsClassifier_lc.pdf, id=217, 454.95784pt x 337.89111pt>
+File: images/KNeighborsClassifier_lc.pdf Graphic file (type pdf)
+<use images/KNeighborsClassifier_lc.pdf>
+Package pdftex.def Info: images/KNeighborsClassifier_lc.pdf  used on input line 161.
+(pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
+<images/k_nearest_neighbors_cm.pdf, id=218, 378.60957pt x 298.29831pt>
+File: images/k_nearest_neighbors_cm.pdf Graphic file (type pdf)
+<use images/k_nearest_neighbors_cm.pdf>
+Package pdftex.def Info: images/k_nearest_neighbors_cm.pdf  used on input line 175.
+(pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
+ [3 </home/xavier/Desktop/AA/project1/report/images/BernoulliNB_lc.pdf> </home/xavier/Desktop/AA/project1/report/images/naive_bayes_cm.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/naive_bayes_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/KNeighborsClassifier_lc.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/KNeighborsClassifier_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/k_nearest_neighbors_cm.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/k_nearest_neighbors_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<images/DecisionTreeClassifier_lc.pdf, id=329, 454.95784pt x 337.89111pt>
+File: images/DecisionTreeClassifier_lc.pdf Graphic file (type pdf)
+<use images/DecisionTreeClassifier_lc.pdf>
+Package pdftex.def Info: images/DecisionTreeClassifier_lc.pdf  used on input line 190.
+(pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
+<images/decision_tree_cm.pdf, id=330, 378.60957pt x 298.29831pt>
+File: images/decision_tree_cm.pdf Graphic file (type pdf)
+<use images/decision_tree_cm.pdf>
+Package pdftex.def Info: images/decision_tree_cm.pdf  used on input line 204.
+(pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
+<images/RandomForestClassifier_lc.pdf, id=331, 455.01744pt x 337.89111pt>
+File: images/RandomForestClassifier_lc.pdf Graphic file (type pdf)
+<use images/RandomForestClassifier_lc.pdf>
+Package pdftex.def Info: images/RandomForestClassifier_lc.pdf  used on input line 219.
+(pdftex.def)             Requested size: 226.79846pt x 168.41408pt.
+<images/random_forest_cm.pdf, id=332, 369.0269pt x 302.10942pt>
+File: images/random_forest_cm.pdf Graphic file (type pdf)
+<use images/random_forest_cm.pdf>
+Package pdftex.def Info: images/random_forest_cm.pdf  used on input line 233.
+(pdftex.def)             Requested size: 201.60077pt x 165.0451pt.
+ [4 </home/xavier/Desktop/AA/project1/report/images/DecisionTreeClassifier_lc.pdf> </home/xavier/Desktop/AA/project1/report/images/decision_tree_cm.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/decision_tree_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/RandomForestClassifier_lc.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/RandomForestClassifier_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/random_forest_cm.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/random_forest_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (/home/xavier/Desktop/AA/project1/report/tables/original_test_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/va_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/switzerland_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/hungary_summary.tex)
+Underfull \vbox (badness 7151) has occurred while \output is active []
+
 
 
 ** Conference Paper **
@@ -556,22 +649,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
-
- </home/xavier/Desktop/AA/project1/report/images/percentage_general.pdf>] (/home/xavier/Desktop/AA/project1/report/AA_Project_1.aux) ) 
+[5] (/home/xavier/Desktop/AA/project1/report/AA_Project_1.aux) ) 
 Here is how much of TeX's memory you used:
- 5653 strings out of 492609
- 84519 string characters out of 6131463
- 179569 words of memory out of 5000000
- 9444 multiletter control sequences out of 15000+600000
- 38476 words of font info for 79 fonts, out of 8000000 for 9000
+ 5737 strings out of 492609
+ 87208 string characters out of 6131463
+ 173687 words of memory out of 5000000
+ 9508 multiletter control sequences out of 15000+600000
+ 39530 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,37p,622b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (2 pages, 151984 bytes).
+ 41i,11n,37p,629b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (5 pages, 280669 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 470 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

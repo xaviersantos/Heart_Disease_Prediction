@@ -18,7 +18,7 @@ def start_training(X_train, y_train, X_test, y_test):
     for model in models:
         model.fit(X_train, y_train)
 
-    logfile = open("report/logs/original_test_summary.txt", 'w')
+    logfile = open("report/tables/original_test_summary.tex", 'w')
     evaluate_models(models, X_test, y_test, logfile)
     logfile.close()
 
@@ -51,6 +51,6 @@ def evaluate_models(models, X, y, logfile=None):
     results = pd.DataFrame({'prediction': predictions}, index=classifiers)
     # create a dataframe from accuracy results
     summary = pd.DataFrame({'accuracy': accuracy}, index=classifiers)
-    log(logfile, results)
-    log(logfile, summary)
+    print(results)
+    log(logfile, summary.sort_values(by='accuracy', ascending=False).to_latex())
 

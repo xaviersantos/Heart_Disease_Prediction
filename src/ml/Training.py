@@ -81,7 +81,7 @@ def result_analysis(y_test, y_pred, logfile):
     matrix = confusion_matrix(y_test, y_pred)
     log(logfile, "Confusion Matrix: \n" + str(matrix))
     sns.heatmap(matrix, annot=True, fmt="d")
-    plt.savefig('report/images/' + os.path.basename(logfile.name) + '_confmtarix.pdf', bbox_inches='tight')
+    plt.savefig('report/images/' + os.path.splitext(os.path.basename(logfile.name))[0] + '_cm.pdf', bbox_inches='tight')
     plt.close()
 
     report = classification_report(y_test, y_pred)

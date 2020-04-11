@@ -43,19 +43,6 @@ def percentage_general(data):
     print("Percentage of patience with heart problems: " + str(round(num_count[1] * 100 / 303, 2)))
 
 
-def percentage_by_sex(data):
-    df = pd.DataFrame(data, columns=['Sex', 'Diagnosis'])
-
-    sns.countplot(df["Sex"])
-    plt.title("Percentage of heart disease incidence in each gender")
-    plt.ylabel("Percentage")
-    plt.savefig('report/images/percentage_by_sex.pdf', bbox_inches='tight')
-    plt.close()
-    num_count = data.Sex.value_counts()
-    print("\nPercentage of men that have heart problems: " + str(round(num_count[0] * 100 / 303, 2)))
-    print("Percentage of women that have heart problems: " + str(round(num_count[1] * 100 / 303, 2)))
-
-
 def age_distribution(data):
     sns.distplot(data['Age'])
     plt.savefig('report/images/age_distribution.pdf', bbox_inches='tight')

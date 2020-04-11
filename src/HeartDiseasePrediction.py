@@ -64,7 +64,6 @@ def main():
     view_categorical(data_categorical)
     box_diagrams(data_pd)
     percentage_general(data_pd)
-    percentage_by_sex(data_pd)
     age_distribution(data_pd)
     scatter_pairs(data_numerical.join(data_pd['Diagnosis']))
     correlation(data_pd)
@@ -74,28 +73,24 @@ def main():
     models = start_training(X_train, y_train, X_test, y_test)
 
     # show the results of the models applied to the original dataset
-    logfile = open("report/logs/original_summary.txt", 'w')
-    log(logfile, "ORIGINAL (\\W TRAINING SET) DATASET SUMMARY\n")
+    logfile = open("report/tables/original_summary.tex", 'w')
     start_prediction(models, data, logfile)
     logfile.close()
 
     # show the results of the models applied to the swiss dataset
-    logfile = open("report/logs/switzerland_summary.txt", 'w')
-    log(logfile, "SWISS DATASET SUMMARY\n")
+    logfile = open("report/tables/switzerland_summary.tex", 'w')
     switzerland_data = load_dataset("dataset/processed.switzerland.data")
     start_prediction(models, switzerland_data[0], logfile)
     logfile.close()
 
     # show the results of the models applied to the hungarian dataset
-    logfile = open("report/logs/hungary_summary.txt", 'w')
-    log(logfile, "HUNGARIAN DATASET SUMMARY\n")
+    logfile = open("report/tables/hungary_summary.tex", 'w')
     hungary_data = load_dataset("dataset/processed.hungarian.data")
     start_prediction(models, hungary_data[0], logfile)
     logfile.close()
 
     # show the results of the models applied to the hungarian dataset
-    logfile = open("report/logs/va_summary.txt", 'w')
-    log(logfile, "V.A. MEDICAL CENTER DATASET SUMMARY\n")
+    logfile = open("report/tables/va_summary.tex", 'w')
     va_data = load_dataset("dataset/processed.va.data")
     start_prediction(models, va_data[0], logfile)
     logfile.close()
