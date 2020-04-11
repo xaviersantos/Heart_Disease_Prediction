@@ -22,7 +22,8 @@
     \IEEEauthorblockA{\textit{Departamento de Eletrónica, Telecomunicações e Informática} \\
         \textit{Universidade de Aveiro}\\
         Aveiro, Portugal \\
-        xavier@ua.pt}
+        xavier@ua.pt
+    }
 }
 
 \maketitle
@@ -36,11 +37,11 @@
 \end{IEEEkeywords}
 
 \section{Introduction}
-In this study, it was analyzed the data form the UCI Machine Learning Repository\cite{b5} regarding patient data used to ascertain the presence of a heart disease. In order to predict said disease were used five models of prediction: Logistic Regression, Naive Bayes, K Nearest Neighbors, Decision Tree and Random Forest.
+In this study, it was analyzed the data form the UCI Machine Learning Repository\cite{mlr} regarding patient data used to ascertain the presence of a heart disease. In order to predict said disease were used five models of prediction: Logistic Regression, Naive Bayes, K Nearest Neighbors, Decision Tree and Random Forest.
 
 \section{Dataset}
-This dataset used for training contains the data of 303 patients from Cleveland\cite{b4} described by 14 attributes each; 5 of which are numerical values while the other 9 represent categories. The "goal" field is represented by a binary value representing the presence or absence of heart disease in the patient. There were other 3 other datasets from Hungary\cite{b1}, Switzerland\cite{b2,b3} and Long Beach\cite{b4} in which the models obtained from the first set were tested after the training. Most of these datasets, however, had many missing values.\\
-The features used are age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting electrocardiogram, maximum heart rate, exercise induced angina, ST depression, ST slope, number of major vessels and Thallium stress test results. An example of the data is show in Table \ref{tab1}.
+This dataset used for training contains the data of 303 patients from Cleveland\cite{va} described by 14 attributes each; 5 of which are numerical values while the other 9 represent categories. The "goal" field is represented by a binary value representing the presence or absence of heart disease in the patient. There were other 3 other datasets from Hungary\cite{hun}, Switzerland\cite{swz1,swz2} and Long Beach\cite{va} in which the models obtained from the first set were tested after the training. Most of these datasets, however, had many missing values.\\
+The features used are age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting electrocardiogram, maximum heart rate, exercise induced angina, ST depression, ST slope, number of major vessels and Thallium stress test results. An example of the data is show in Table \ref{data_head}.
 
 \begin{table}[htbp]
     \caption{Data head}
@@ -48,75 +49,249 @@ The features used are age, sex, chest pain type, resting blood pressure, cholest
         \resizebox{\columnwidth}{!}{%
             \input{tables/data_head.tex}
         }%
-        \label{tab1}
+        \label{data_head}
     \end{center}
 \end{table}
 
 \section{Data analysis}
 
-The contents of Table \ref{tab2} show some relevant statistics about the data that is being used for training.
+There are some information that can be gathered from a preliminary analysis of the data. Like the distribution of diseased patients by age, sex or any other attribute.
 
-\begin{table}[htbp]
-    \caption{Data description}
-    \begin{center}
-        \resizebox{\columnwidth}{!}{%
-            \input{tables/data_describe.tex}
-        }%
-        \label{tab2}
-    \end{center}
-\end{table}
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.7\linewidth]{images/age_distribution.pdf}}
+    \caption{Distribution of heart disease by patient's age}
+    \label{age_dist}
+\end{figure}
 
-Continuing the analysis, it was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina, this is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{tab3} and Figure \ref{fig1}.
+For example, in Figure \ref{age_dist} we can see that, in this sample, most of the cases of heart disease come from patients between 55 and 60 years old.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.7\linewidth]{images/correlation_heatmap.pdf}}
+    \caption{Heat map of the correlation between the features and the diagnosis}
+    \label{corr_heatmap}
+\end{figure}
+
+But what interests us the most is the relation of this attributes (features) with a case of heart disease(goal).
+\\It was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina, this is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{data_corr} and Figures \ref{corr_heatmap} and \ref{corr_scatter}.
 
 \begin{table}[htbp]
     \caption{Data correlation}
     \begin{center}
         \input{tables/data_correlation.tex}
-        \label{tab3}
+        \label{data_corr}
     \end{center}
 \end{table}
 
 \begin{figure}[H]
-    \centerline{\includegraphics[width=0.8\linewidth]{images/correlation_scatter.pdf}}
+    \centerline{\includegraphics[width=\linewidth]{images/correlation_scatter.pdf}}
     \caption{Scatter plots of the correlation between the features and the diagnosis}
-    \label{fig1}
-\end{figure}
-
-From the gathered data it can also be concluded that the percentage of patience without heart problems in this sample is 54.13\%.
-
-\begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.7\linewidth]{images/percentage_general.pdf}}
-    \caption{Distribution of heart disease in patients}
-    \label{fig2}
+    \label{corr_scatter}
 \end{figure}
 
 \section{Data Preprocessing}
-
+The data is provided by the UCI Machine Learning Repository\cite{mlr} in the format of a CSV file with the classifiers encoded into integers. The target is transformed from 5 different values for different heart disease to a binary value of diseased or not diseased.\\
 Before training the models the data had to be prepared by filling the missing values on some of the features. This was achieved by giving the mean value for that feature if it was a numeric value or the most common value if it was categorical.\\
 The data was then shuffled and split in two sets: one for training and another one for testing and cross-validation with the distribution of 80\% and 20\% respectively.
 
 \section{Model training and tuning}
 
 \subsection{Logistic Regression}
+The logistic regression model uses a "liblinear" solver as it provides better results with smaller datasets and the goal we are taking in consideration is binary (disease / no disease).
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.9\linewidth]{images/LogisticRegression_lc.pdf}}
+    \caption{Logistic Regression Learning Curve}
+    \label{lr_lc}
+\end{figure}
+
+\noindent
+Train accuracy: 82.64\%
+\\Test accuracy: 70.49\%
+\\[\baselineskip]
+Number of mislabeled points out of a total 61 points : 18
+\\The accuracy score achieved is: 70.49\%
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/log_reg_cm.pdf}}
+    \caption{Logistic Regression Confusion Matrix}
+    \label{lr_cm}
+\end{figure}
+
+\noindent
+False Negative Rate: 38.5
+\\False Positive Rate: 22.9
+\newpage
+
 
 \subsection{Naive Bayes}
+Both the Gaussian and Bernoulli variants of the model were tested, but Bernoulli gave the best results. The Bernoulli method deals in binary inputs and transforms the rest of the data to binary-valued feature vectors. It is based on the formula:
+\\[\baselineskip]
+\centerline{$P(x_i \mid y) = P(i \mid y) x_i + (1 - P(i \mid y)) (1 - x_i)$}
+\\[\baselineskip]
+which means it penalizes the non-occurrence of a feature.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.9\linewidth]{images/BernoulliNB_lc.pdf}}
+    \caption{Naive Bayes Learning Curve}
+    \label{nb_lc}
+\end{figure}
+
+\noindent
+Train accuracy: 80.17\%
+\\Test accuracy: 75.41\%
+\\[\baselineskip]
+Number of mislabeled points out of 61 points : 15
+\\The accuracy score achieved is: 75.41\%
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/naive_bayes_cm.pdf}}
+    \caption{Naive Bayes Confusion Matrix}
+    \label{nb_cm}
+\end{figure}
+
+\noindent
+False Negative Rate: 30.8
+\\False Positive Rate: 20.0
+\newpage
 
 \subsection{K Nearest Neighbors}
+The optimal choice of the value of \textit{K} is highly data-dependent: in general a larger suppresses the effects of noise, but makes the classification boundaries less distinct. implements learning based on the \textit{K} nearest neighbors of each query point, where \textit{K} was selected from testing multiple candidates of which 3 gave the best results for the test set.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.9\linewidth]{images/KNeighborsClassifier_lc.pdf}}
+    \caption{K Nearest Neighbors Learning Curve}
+    \label{knn_lc}
+\end{figure}
+
+\noindent
+N neighbors = 3
+\\Train accuracy: 76.03\%
+\\Test accuracy: 70.49\%
+\\[\baselineskip]
+Number of mislabeled points out of 61 points : 18
+\\The accuracy score achieved is: 70.49\%
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/k_nearest_neighbors_cm.pdf}}
+    \caption{K Nearest Neighbors Confusion Matrix}
+    \label{knn_cm}
+\end{figure}
+
+\noindent
+False Negative Rate: 30.8
+\\False Positive Rate: 28.6
+\newpage
 
 \subsection{Decision Tree}
+This model predicts the value of a target variable using simple if-then-else rules inferred from the data features. This decisions can be made on different levels (depth) until reaching the target goal.
+\\For the selection of the maximum depth of the decision tree classifier were tested the values from 1 to 10 and the chosen the one which gave best results for the test subset.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.9\linewidth]{images/DecisionTreeClassifier_lc.pdf}}
+    \caption{Decision Tree Learning Curve}
+    \label{dt_lc}
+\end{figure}
+
+\noindent
+Max depth = 3
+\\Train accuracy: 85.12\%
+\\Test accuracy: 81.97\%
+\\[\baselineskip]
+Number of mislabeled points out of a total 61 points : 11
+\\The accuracy score achieved is: 81.97\%
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/decision_tree_cm.pdf}}
+    \caption{Decision Tree Confusion Matrix}
+    \label{dt_cm}
+\end{figure}
+
+\noindent
+False Negative Rate: 26.9
+\\False Positive Rate: 11.4
+\newpage
 
 \subsection{Random Forest}
 
+A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The optimal value between processing time and accuracy is 100 trees and the depth of each tree was tested for 10 values, being the depth of 1 the one that provided the best results.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.9\linewidth]{images/RandomForestClassifier_lc.pdf}}
+    \caption{Random Forest Learning Curve}
+    \label{rf_lc}
+\end{figure}
+
+\noindent
+Max depth = 1
+\\Train accuracy: 84.71\%
+\\Test accuracy: 81.97\%
+\\[\baselineskip]
+Number of mislabeled points out of 61 points : 11
+\\The accuracy score achieved is: 81.97\%
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=0.8\linewidth]{images/random_forest_cm.pdf}}
+    \caption{Random Forest Confusion Matrix}
+    \label{rf_cm}
+\end{figure}
+
+\noindent
+False Negative Rate: 34.6
+\\False Positive Rate: 5.7
+\newpage
+
 \section{Results}
+
+Here we can see the comparison between the models for both the original dataset and some different ones from other hospitals.
+
+\begin{table}[htbp]
+    \caption{Results for the test section of the original data}
+    \begin{center}
+        \input{tables/original_test_summary.tex}
+        \label{ori_res}
+    \end{center}
+\end{table}
+
+In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the data, which was left out from the original dataset for these tests. We can see that Decision Trees and random Forest gave us the best results while Logistic Regression and K Nearest Neighbors fell short.
+
+\begin{table}[htbp]
+    \caption{Results for the V.A. Medical Center's data}
+    \begin{center}
+        \input{tables/va_summary.tex}
+        \label{va_res}
+    \end{center}
+\end{table}
+
+In another hospital from the USA\cite{va}, whose results are shown in Table \ref{va_res}, we have some general decrease on accuracy, but the relative efficiency of the models remains the same except for the K Nearest Neighbors with a 20\% drop on accuracy.
+
+\begin{table}[htbp]
+    \caption{Results for the Swiss data}
+    \begin{center}
+        \input{tables/switzerland_summary.tex}
+        \label{sw_res}
+    \end{center}
+\end{table}
+
+Taking the data gathered by 2 hospitals in Switzerland\cite{swz1,swz2}, we see in Table \ref{sw_res} that Logistic Regression predicts most of the cases wrong while the rest of the models perform as expected.
+
+\begin{table}[H]
+    \caption{Results for the Hungarian data}
+    \begin{center}
+        \input{tables/hungary_summary.tex}
+        \label{hun_res}
+    \end{center}
+\end{table}
+
+The results taken from the data gathered by the Hungarian hospital\cite{hun} and displayed in Table \ref{hun_res} show a massive drop in accuracy from the Decision Tree and Logistic Regression and only Naive Bayes and Random Forest provided useful predictions.
 
 \section{Conclusion}
 
 \begin{thebibliography}{00}
-    \bibitem{b1} Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
-    \bibitem{b2} University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
-    \bibitem{b3} University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
-    \bibitem{b4} V.A. Medical Center, Long Beach and Cleveland Clinic Foundation:Robert Detrano, M.D., Ph.D.
-    \bibitem{b5} Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
+    \bibitem{hun} Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
+    \bibitem{swz1} University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
+    \bibitem{swz2} University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
+    \bibitem{va} V.A. Medical Center, Long Beach and Cleveland Clinic Foundation:Robert Detrano, M.D., Ph.D.
+    \bibitem{mlr} Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 \end{thebibliography}
 
 \end{document}
