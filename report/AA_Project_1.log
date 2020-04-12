@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  11 APR 2020 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  12 APR 2020 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -199,6 +199,34 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen137
+\captionmargin@=\dimen138
+\captionwidth=\dimen139
+\caption@tempdima=\dimen140
+\caption@indent=\dimen141
+\caption@parindent=\dimen142
+\caption@hangindent=\dimen143
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\normalfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi \fi .
+\c@caption@flags=\count111
+\c@ContinuedFloat=\count112
+)
+\c@subfigure=\count113
+\c@subtable=\count114
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -369,30 +397,30 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen137
-\lightrulewidth=\dimen138
-\cmidrulewidth=\dimen139
-\belowrulesep=\dimen140
-\belowbottomsep=\dimen141
-\aboverulesep=\dimen142
-\abovetopsep=\dimen143
-\cmidrulesep=\dimen144
-\cmidrulekern=\dimen145
-\defaultaddspace=\dimen146
-\@cmidla=\count111
-\@cmidlb=\count112
-\@aboverulesep=\dimen147
-\@belowrulesep=\dimen148
-\@thisruleclass=\count113
-\@lastruleclass=\count114
-\@thisrulewidth=\dimen149
+\heavyrulewidth=\dimen144
+\lightrulewidth=\dimen145
+\cmidrulewidth=\dimen146
+\belowrulesep=\dimen147
+\belowbottomsep=\dimen148
+\aboverulesep=\dimen149
+\abovetopsep=\dimen150
+\cmidrulesep=\dimen151
+\cmidrulekern=\dimen152
+\defaultaddspace=\dimen153
+\@cmidla=\count115
+\@cmidlb=\count116
+\@aboverulesep=\dimen154
+\@belowrulesep=\dimen155
+\@thisruleclass=\count117
+\@lastruleclass=\count118
+\@thisrulewidth=\dimen156
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
  (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
-\col@sep=\dimen150
+\col@sep=\dimen157
 \ar@mcellbox=\box31
-\extrarowheight=\dimen151
+\extrarowheight=\dimen158
 \NC@list=\toks21
 \extratabsurround=\skip49
 \backup@length=\skip50
@@ -408,7 +436,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
 )
-\XKV@depth=\count115
+\XKV@depth=\count119
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -418,34 +446,34 @@ Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box34
 )
-\tc@llx=\dimen152
-\tc@lly=\dimen153
-\tc@urx=\dimen154
-\tc@ury=\dimen155
+\tc@llx=\dimen159
+\tc@lly=\dimen160
+\tc@urx=\dimen161
+\tc@ury=\dimen162
 Package trimclip Info: Using driver 'tc-pdftex.def'.
  (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen156
-\adjbox@Height=\dimen157
-\adjbox@Depth=\dimen158
-\adjbox@Totalheight=\dimen159
-\adjbox@pwidth=\dimen160
-\adjbox@pheight=\dimen161
-\adjbox@pdepth=\dimen162
-\adjbox@ptotalheight=\dimen163
+\adjbox@Width=\dimen163
+\adjbox@Height=\dimen164
+\adjbox@Depth=\dimen165
+\adjbox@Totalheight=\dimen166
+\adjbox@pwidth=\dimen167
+\adjbox@pheight=\dimen168
+\adjbox@pdepth=\dimen169
+\adjbox@ptotalheight=\dimen170
  (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count116
+\c@checkoddpage=\count120
 ) (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box35
-\sift@deathcycles=\count117
-\@vwid@loff=\dimen164
-\@vwid@roff=\dimen165
+\sift@deathcycles=\count121
+\@vwid@loff=\dimen171
+\@vwid@roff=\dimen172
 )) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count118
+\c@float@type=\count122
 \float@exts=\toks24
 \float@box=\box36
 \@float@everytoks=\toks25
@@ -453,38 +481,38 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 ) (/home/xavier/Desktop/AA/project1/report/AA_Project_1.aux)
 \openout1 = `AA_Project_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 18.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count119
-\scratchdimen=\dimen166
+\scratchcounter=\count123
+\scratchdimen=\dimen173
 \scratchbox=\box38
-\nofMPsegments=\count120
-\nofMParguments=\count121
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count122
-\MPscratchDim=\dimen167
-\MPnumerator=\count123
-\makeMPintoPDFobject=\count124
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen174
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -521,7 +549,12 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (/home/xavier/Desktop/AA/project1/report/tables/data_head.tex
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ (/home/xavier/Desktop/AA/project1/report/tables/data_head.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -530,101 +563,101 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-<images/age_distribution.pdf, id=1, 402.28856pt x 312.02145pt>
-File: images/age_distribution.pdf Graphic file (type pdf)
-<use images/age_distribution.pdf>
-Package pdftex.def Info: images/age_distribution.pdf  used on input line 61.
-(pdftex.def)             Requested size: 176.39923pt x 136.81851pt.
-<images/correlation_heatmap.pdf, id=2, 697.66359pt x 622.93918pt>
+<images/view_categorical.pdf, id=1, 1174.53809pt x 697.0134pt>
+File: images/view_categorical.pdf Graphic file (type pdf)
+<use images/view_categorical.pdf>
+Package pdftex.def Info: images/view_categorical.pdf  used on input line 64.
+(pdftex.def)             Requested size: 232.19843pt x 137.79424pt.
+<images/view_numerical.pdf, id=2, 600.72244pt x 602.8491pt>
+File: images/view_numerical.pdf Graphic file (type pdf)
+<use images/view_numerical.pdf>
+Package pdftex.def Info: images/view_numerical.pdf  used on input line 69.
+(pdftex.def)             Requested size: 232.19843pt x 233.0129pt.
+ (/home/xavier/Desktop/AA/project1/report/tables/data_correlation.tex)
+<images/correlation_heatmap.pdf, id=3, 697.66359pt x 622.93918pt>
 File: images/correlation_heatmap.pdf Graphic file (type pdf)
 <use images/correlation_heatmap.pdf>
-Package pdftex.def Info: images/correlation_heatmap.pdf  used on input line 69.
+Package pdftex.def Info: images/correlation_heatmap.pdf  used on input line 91.
 (pdftex.def)             Requested size: 176.39923pt x 157.50238pt.
- (/home/xavier/Desktop/AA/project1/report/tables/data_correlation.tex)
-<images/correlation_scatter.pdf, id=3, 1002.77707pt x 913.21553pt>
+<images/correlation_scatter.pdf, id=4, 1002.77707pt x 913.21553pt>
 File: images/correlation_scatter.pdf Graphic file (type pdf)
 <use images/correlation_scatter.pdf>
-Package pdftex.def Info: images/correlation_scatter.pdf  used on input line 86.
+Package pdftex.def Info: images/correlation_scatter.pdf  used on input line 97.
 (pdftex.def)             Requested size: 252.0pt x 229.48775pt.
-
-Underfull \vbox (badness 3240) has occurred while \output is active []
-
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- </home/xavier/Desktop/AA/project1/report/images/age_distribution.pdf> </home/xavier/Desktop/AA/project1/report/images/correlation_heatmap.pdf
+ </home/xavier/Desktop/AA/project1/report/images/view_categorical.pdf> </home/xavier/Desktop/AA/project1/report/images/view_numerical.pdf
 
-pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/correlation_heatmap.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/view_numerical.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \vbox (badness 7613) has occurred while \output is active []
-
-<images/LogisticRegression_lc.pdf, id=74, 454.95784pt x 337.89111pt>
+<images/LogisticRegression_lc.pdf, id=116, 454.95784pt x 337.89111pt>
 File: images/LogisticRegression_lc.pdf Graphic file (type pdf)
 <use images/LogisticRegression_lc.pdf>
-Package pdftex.def Info: images/LogisticRegression_lc.pdf  used on input line 102.
+Package pdftex.def Info: images/LogisticRegression_lc.pdf  used on input line 113.
 (pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
  (/home/xavier/Desktop/AA/project1/report/logs/log_reg.tex)
-<images/log_reg_cm.pdf, id=75, 378.60957pt x 298.29831pt>
+<images/log_reg_cm.pdf, id=117, 378.60957pt x 298.29831pt>
 File: images/log_reg_cm.pdf Graphic file (type pdf)
 <use images/log_reg_cm.pdf>
-Package pdftex.def Info: images/log_reg_cm.pdf  used on input line 111.
+Package pdftex.def Info: images/log_reg_cm.pdf  used on input line 122.
 (pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
- [2 </home/xavier/Desktop/AA/project1/report/images/correlation_scatter.pdf> </home/xavier/Desktop/AA/project1/report/images/LogisticRegression_lc.pdf
+ [2 </home/xavier/Desktop/AA/project1/report/images/correlation_heatmap.pdf> </home/xavier/Desktop/AA/project1/report/images/correlation_scatter.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/correlation_scatter.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/LogisticRegression_lc.pdf
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/LogisticRegression_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </home/xavier/Desktop/AA/project1/report/images/log_reg_cm.pdf
-
-pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/log_reg_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<images/BernoulliNB_lc.pdf, id=215, 455.01744pt x 337.89111pt>
+<images/BernoulliNB_lc.pdf, id=284, 455.01744pt x 337.89111pt>
 File: images/BernoulliNB_lc.pdf Graphic file (type pdf)
 <use images/BernoulliNB_lc.pdf>
-Package pdftex.def Info: images/BernoulliNB_lc.pdf  used on input line 124.
+Package pdftex.def Info: images/BernoulliNB_lc.pdf  used on input line 135.
 (pdftex.def)             Requested size: 226.79846pt x 168.41408pt.
  (/home/xavier/Desktop/AA/project1/report/logs/naive_bayes.tex)
-<images/naive_bayes_cm.pdf, id=216, 378.60957pt x 298.29831pt>
+<images/naive_bayes_cm.pdf, id=285, 378.60957pt x 298.29831pt>
 File: images/naive_bayes_cm.pdf Graphic file (type pdf)
 <use images/naive_bayes_cm.pdf>
-Package pdftex.def Info: images/naive_bayes_cm.pdf  used on input line 133.
+Package pdftex.def Info: images/naive_bayes_cm.pdf  used on input line 144.
 (pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<images/KNeighborsClassifier_lc.pdf, id=217, 454.95784pt x 337.89111pt>
+<images/KNeighborsClassifier_lc.pdf, id=286, 454.95784pt x 337.89111pt>
 File: images/KNeighborsClassifier_lc.pdf Graphic file (type pdf)
 <use images/KNeighborsClassifier_lc.pdf>
-Package pdftex.def Info: images/KNeighborsClassifier_lc.pdf  used on input line 142.
+Package pdftex.def Info: images/KNeighborsClassifier_lc.pdf  used on input line 153.
 (pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
- (/home/xavier/Desktop/AA/project1/report/logs/k_nearest_neighbors.tex) [3 </home/xavier/Desktop/AA/project1/report/images/BernoulliNB_lc.pdf> </home/xavier/Desktop/AA/project1/report/images/naive_bayes_cm.pdf
+ (/home/xavier/Desktop/AA/project1/report/logs/k_nearest_neighbors.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 </home/xavier/Desktop/AA/project1/report/images/log_reg_cm.pdf> </home/xavier/Desktop/AA/project1/report/images/BernoulliNB_lc.pdf
+
+pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/BernoulliNB_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </home/xavier/Desktop/AA/project1/report/images/naive_bayes_cm.pdf
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/naive_bayes_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > </home/xavier/Desktop/AA/project1/report/images/KNeighborsClassifier_lc.pdf
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/KNeighborsClassifier_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<images/k_nearest_neighbors_cm.pdf, id=314, 369.0269pt x 298.29831pt>
+>])
+<images/k_nearest_neighbors_cm.pdf, id=398, 369.0269pt x 298.29831pt>
 File: images/k_nearest_neighbors_cm.pdf Graphic file (type pdf)
 <use images/k_nearest_neighbors_cm.pdf>
-Package pdftex.def Info: images/k_nearest_neighbors_cm.pdf  used on input line 151.
+Package pdftex.def Info: images/k_nearest_neighbors_cm.pdf  used on input line 162.
 (pdftex.def)             Requested size: 201.60077pt x 162.96306pt.
-<images/DecisionTreeClassifier_lc.pdf, id=315, 454.95784pt x 337.89111pt>
+<images/DecisionTreeClassifier_lc.pdf, id=399, 454.95784pt x 337.89111pt>
 File: images/DecisionTreeClassifier_lc.pdf Graphic file (type pdf)
 <use images/DecisionTreeClassifier_lc.pdf>
-Package pdftex.def Info: images/DecisionTreeClassifier_lc.pdf  used on input line 161.
+Package pdftex.def Info: images/DecisionTreeClassifier_lc.pdf  used on input line 172.
 (pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
- (/home/xavier/Desktop/AA/project1/report/logs/decision_tree.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-<images/decision_tree_cm.pdf, id=316, 369.0269pt x 298.29831pt>
+ (/home/xavier/Desktop/AA/project1/report/logs/decision_tree.tex)
+<images/decision_tree_cm.pdf, id=400, 369.0269pt x 298.29831pt>
 File: images/decision_tree_cm.pdf Graphic file (type pdf)
 <use images/decision_tree_cm.pdf>
-Package pdftex.def Info: images/decision_tree_cm.pdf  used on input line 170.
+Package pdftex.def Info: images/decision_tree_cm.pdf  used on input line 181.
 (pdftex.def)             Requested size: 201.60077pt x 162.96306pt.
-<images/RandomForestClassifier_lc.pdf, id=317, 454.95784pt x 337.89111pt>
+<images/RandomForestClassifier_lc.pdf, id=401, 454.95784pt x 337.89111pt>
 File: images/RandomForestClassifier_lc.pdf Graphic file (type pdf)
 <use images/RandomForestClassifier_lc.pdf>
-Package pdftex.def Info: images/RandomForestClassifier_lc.pdf  used on input line 180.
+Package pdftex.def Info: images/RandomForestClassifier_lc.pdf  used on input line 191.
 (pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
  (/home/xavier/Desktop/AA/project1/report/logs/random_forest.tex [4 </home/xavier/Desktop/AA/project1/report/images/k_nearest_neighbors_cm.pdf> </home/xavier/Desktop/AA/project1/report/images/DecisionTreeClassifier_lc.pdf
 
@@ -636,10 +669,10 @@ pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/de
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/RandomForestClassifier_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >])
-<images/random_forest_cm.pdf, id=425, 369.0269pt x 298.29831pt>
+<images/random_forest_cm.pdf, id=509, 369.0269pt x 298.29831pt>
 File: images/random_forest_cm.pdf Graphic file (type pdf)
 <use images/random_forest_cm.pdf>
-Package pdftex.def Info: images/random_forest_cm.pdf  used on input line 189.
+Package pdftex.def Info: images/random_forest_cm.pdf  used on input line 200.
 (pdftex.def)             Requested size: 201.60077pt x 162.96306pt.
  (/home/xavier/Desktop/AA/project1/report/tables/original_test_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/va_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/switzerland_summary.tex) (/home/xavier/Desktop/AA/project1/report/tables/hungary_summary.tex) [5 </home/xavier/Desktop/AA/project1/report/images/random_forest_cm.pdf>]
 
@@ -657,18 +690,18 @@ Before submitting the final camera ready copy, remember to:
 
 ] (/home/xavier/Desktop/AA/project1/report/AA_Project_1.aux) ) 
 Here is how much of TeX's memory you used:
- 5759 strings out of 492609
- 88040 string characters out of 6131463
- 173734 words of memory out of 5000000
- 9513 multiletter control sequences out of 15000+600000
- 39530 words of font info for 84 fonts, out of 8000000 for 9000
+ 6910 strings out of 492609
+ 108865 string characters out of 6131463
+ 197576 words of memory out of 5000000
+ 10656 multiletter control sequences out of 15000+600000
+ 38884 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,37p,640b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,77p,640b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (6 pages, 283155 bytes).
+Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (6 pages, 310239 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 559 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,6 +5,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{booktabs}
@@ -55,24 +56,23 @@ The features used are age, sex, chest pain type, resting blood pressure, cholest
 
 \section{Data analysis}
 
-There is some information that can be gathered from a preliminary analysis of the data. Like the distribution of diseased patients by age, sex or any other attribute.
+There is some information that can be gathered from a preliminary analysis of the data. Like the distribution of diseased patients by each category (Figure \ref{hist_cat}) or the numeric value distribution of all patients (Figure \ref{hist_num}).
 
-\begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.7\linewidth]{images/age_distribution.pdf}}
-    \caption{Distribution of heart disease by patient's age}
-    \label{age_dist}
+\begin{figure}[htpb]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\linewidth]{images/view_categorical.pdf}
+        \caption{Categorical values}
+        \label{hist_cat}
+    \end{subfigure}      
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=1\linewidth]{images/view_numerical.pdf}
+        \caption{Numerical values}
+        \label{hist_num}
+    \end{subfigure}
+    \label{hist}
+    \caption[Histograms]{Histogram of the features}
 \end{figure}
-
-For example, in Figure \ref{age_dist} we can see that, in this sample, most of the cases of heart disease come from patients between 55 and 60 years old.
-
-\begin{figure}[H]
-    \centerline{\includegraphics[width=0.7\linewidth]{images/correlation_heatmap.pdf}}
-    \caption{Heat map of the correlation between the features and the diagnosis}
-    \label{corr_heatmap}
-\end{figure}
-
-But what interests us the most is the relation between this attributes (features) and a case of heart disease(goal).
-\\It was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{data_corr} and Figures \ref{corr_heatmap} and \ref{corr_scatter}.
 
 \begin{table}[htbp]
     \caption{Data correlation}
@@ -82,7 +82,18 @@ But what interests us the most is the relation between this attributes (features
     \end{center}
 \end{table}
 
-\begin{figure}[H]
+\newpage
+
+But what interests us the most is the relation between this attributes (features) and a case of heart disease(goal).
+\\It was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{data_corr} and Figures \ref{corr_heatmap} and \ref{corr_scatter}.
+
+\begin{figure}[htpb]
+    \centerline{\includegraphics[width=0.7\linewidth]{images/correlation_heatmap.pdf}}
+    \caption{Heat map of the correlation between the features and the diagnosis}
+    \label{corr_heatmap}
+\end{figure}
+
+\begin{figure}[htpb]
     \centerline{\includegraphics[width=\linewidth]{images/correlation_scatter.pdf}}
     \caption{Scatter plots of the correlation between the features and the diagnosis}
     \label{corr_scatter}

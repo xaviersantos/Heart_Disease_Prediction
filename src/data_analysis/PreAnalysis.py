@@ -12,12 +12,12 @@ def box_diagrams(data):
 
 def histogram(data):
     data.hist(bins=15, figsize=(10, 10), layout=(3, 2))
-    plt.savefig('report/images/histogram.pdf', bbox_inches='tight')
+    plt.savefig('report/images/view_numerical.pdf', bbox_inches='tight')
     plt.close()
 
 
 def view_categorical(data):
-    fig, ax = plt.subplots(2, 4, figsize=(20, 10))
+    fig, ax = plt.subplots(3, 3, figsize=(20, 10))
 
     for variable, subplot in zip(data.columns, ax.flatten()):
         sns.countplot(data[variable], ax=subplot, hue=data['Diagnosis'])
