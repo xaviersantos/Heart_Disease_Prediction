@@ -21,8 +21,6 @@ def view_categorical(data):
 
     for variable, subplot in zip(data.columns, ax.flatten()):
         sns.countplot(data[variable], ax=subplot, hue=data['Diagnosis'])
-        for label in subplot.get_xticklabels():
-            label.set_rotation(90)
     plt.savefig('report/images/view_categorical.pdf', bbox_inches='tight')
     plt.close()
 

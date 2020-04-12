@@ -31,7 +31,7 @@ def load_dataset(path):
 
 def fill(data, numerical, categorical):
     for feature in categorical:
-        data.fillna(data[feature].value_counts(), inplace=True)
+        data.fillna(data[feature].value_counts().index[0], inplace=True)
 
     for feature in numerical:
         data.fillna(data[feature].mean(), inplace=True)
