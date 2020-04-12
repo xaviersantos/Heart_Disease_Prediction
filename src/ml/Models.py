@@ -9,8 +9,8 @@ from utils import log
 
 
 def logistic_regression(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/log_reg.txt", "w")
-    log(logfile, "Logistic Regression\n")
+    logfile = open("report/logs/log_reg.tex", "w")
+    print("Logistic Regression\n")
 
     log_reg = train_model(X_train, y_train, X_test, y_test,
                           LogisticRegression, logfile, random_state=0, solver='liblinear')
@@ -23,13 +23,13 @@ def logistic_regression(X_train, y_train, X_test, y_test):
 
 
 def naive_bayes(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/naive_bayes.txt", "w")
-    log(logfile, "Naive bayes\n")
+    logfile = open("report/logs/naive_bayes.tex", "w")
+    print("Naive Bayes\n")
 
-    log(logfile, "GaussianNB\n")
-    gnb = train_model(X_train, y_train, X_test, y_test, GaussianNB, logfile)
+    print("\nGausian")
+    gnb = train_model(X_train, y_train, X_test, y_test, GaussianNB)
 
-    log(logfile, "BernoulliNB\n")
+    print("\nBernoulli")
     bnb = train_model(X_train, y_train, X_test, y_test, BernoulliNB, logfile)
 
     if gnb.score(X_test, y_test) > bnb.score(X_test, y_test):
@@ -45,20 +45,25 @@ def naive_bayes(X_train, y_train, X_test, y_test):
 
 
 def k_nearest_neighbors(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/k_nearest_neighbors.txt", "w")
-    log(logfile, "K Nearest Neighbors\n")
+    logfile = open("report/logs/k_nearest_neighbors.tex", "w")
+    print("K Nearest Neighbors\n")
 
-    log(logfile, "n_neighbors = 1")
-    knn = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, logfile, n_neighbors=1)
+    print("n_neighbors = 1")
+    knn = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, n_neighbors=1)
 
-    log(logfile, "\nSeek optimal 'n_neighbours' parameter:")
+    print("\nSeek optimal 'n_neighbours' parameter:")
+    n_neighbors = 1
     for i in range(2,10):
-        log(logfile, "\nN neighbors = " + str(i))
-        tmp = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, logfile, n_neighbors=i)
+        print("\nN neighbors = " + str(i))
+        tmp = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, n_neighbors=i)
         if tmp.score(X_test, y_test) > knn.score(X_test, y_test):
             knn = tmp
+            n_neighbors = i
         else:
             break
+
+    log(logfile, "N neighbors = " + str(n_neighbors) + "\\\\")
+    train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, logfile, n_neighbors=n_neighbors)
 
     plot_learning_curve(knn, X_train, y_train)
 
@@ -68,20 +73,22 @@ def k_nearest_neighbors(X_train, y_train, X_test, y_test):
 
 
 def decision_tree(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/decision_tree.txt", "w")
-    log(logfile, "Decision Tree\n")
+    logfile = open("report/logs/decision_tree.tex", "w")
+    print("Decision Tree\n")
 
-    log(logfile, "max_depth = 1")
-    dt = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, logfile, max_depth=1, random_state=0)
+    print("Max depth = 1")
+    dt = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, max_depth=1, random_state=0)
 
-    log(logfile, "\nSeek optimal 'max_depth' parameter:")
-    for max_depth in range(2,10):
-        log(logfile, "\nmax_depth = " + str(max_depth))
-        tmp = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, logfile, max_depth=max_depth, random_state=0)
+    print("\nSeek optimal 'max_depth' parameter:")
+    max_depth = 1
+    for i in range(2,10):
+        tmp = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, max_depth=i, random_state=0)
         if tmp.score(X_test, y_test) > dt.score(X_test, y_test):
             dt = tmp
-        # else:
-        #     break
+            max_depth = i
+
+    log(logfile, "Max depth = " + str(max_depth) + "\\\\")
+    train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, logfile, max_depth=max_depth, random_state=0)
 
     plot_learning_curve(dt, X_train, y_train)
 
@@ -91,24 +98,29 @@ def decision_tree(X_train, y_train, X_test, y_test):
 
 
 def random_forest(X_train, y_train, X_test, y_test):
-    logfile = open("report/logs/random_forest.txt", "w")
-    log(logfile, "Random Forest\n")
+    logfile = open("report/logs/random_forest.tex", "w")
+    print("Random Forest\n")
 
     # Random forest with 100 trees
     rf = train_model(X_train, y_train, X_test, y_test,
-                     RandomForestClassifier, logfile, max_depth=1, n_estimators=100, random_state=0, n_jobs=-1)
+                     RandomForestClassifier, max_depth=1, n_estimators=100, random_state=0, n_jobs=-1)
 
-    log(logfile, "\nSeek optimal 'max_depth' parameter:")
-    for max_depth in range(2, 10):
-        log(logfile, "\nmax_depth = " + str(max_depth))
-        tmp = train_model(X_train, y_train, X_test, y_test,
-                          RandomForestClassifier, logfile, max_depth=max_depth, n_estimators=100, random_state=0,
-                          n_jobs=-1)
+    print("\nSeek optimal 'max_depth' parameter:")
+    max_depth = 1
+    for i in range(2, 10):
+        print("\nmax_depth = " + str(max_depth))
+        tmp = train_model(X_train, y_train, X_test, y_test, RandomForestClassifier,
+                          max_depth=i, n_estimators=100, random_state=0, n_jobs=-1)
 
         if tmp.score(X_test, y_test) > rf.score(X_test, y_test):
             rf = tmp
+            max_depth = i
         # elif tmp.score(X_test, y_test) != rf.score(X_test, y_test):
         #     break
+
+    log(logfile, "Max depth = " + str(max_depth) + "\\\\")
+    train_model(X_train, y_train, X_test, y_test, RandomForestClassifier, logfile,
+                max_depth=max_depth, n_estimators=100, random_state=0, n_jobs=-1)
 
     plot_learning_curve(rf, X_train, y_train)
 

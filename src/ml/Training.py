@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+import pandas as pd
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.model_selection import learning_curve
 
@@ -20,19 +21,19 @@ def train_model(X_train, y_train, X_test, y_test, classifier, logfile=None, **kw
     fit_accuracy = model.score(X_train, y_train)
     test_accuracy = model.score(X_test, y_test)
 
-    log(logfile, f"Train accuracy: {fit_accuracy:0.2%}")
-    log(logfile, f"Test accuracy: {test_accuracy:0.2%}")
+    if logfile:
+        log(logfile, f"Train accuracy: {fit_accuracy:0.2%}")
+        log(logfile, f"\\\\Test accuracy: {test_accuracy:0.2%}")
 
     y_pred = model.predict(X_test)
-    log(logfile, "\npredictions= " + str(y_pred))
 
     score = round(accuracy_score(y_pred, y_test) * 100, 2)
-    log(logfile,"\nNumber of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
-    log(logfile, "The accuracy score achieved is: " + str(score) + " %")
+    if logfile:
+        log(logfile,"\\\\Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
+        log(logfile, "\\\\The accuracy score achieved is: " + str(score) + " %")
 
-    result_analysis(y_test, y_pred, logfile)
-
-    log(logfile, "-" * 90)
+    if logfile:
+        result_analysis(y_test, y_pred, logfile)
 
     return model
 
@@ -78,14 +79,17 @@ def plot_learning_curve(model, X_train, y_train):
 
 
 def result_analysis(y_test, y_pred, logfile):
+    modelname = os.path.splitext(os.path.basename(logfile.name))[0]
     matrix = confusion_matrix(y_test, y_pred)
-    log(logfile, "Confusion Matrix: \n" + str(matrix))
     sns.heatmap(matrix, annot=True, fmt="d")
-    plt.savefig('report/images/' + os.path.splitext(os.path.basename(logfile.name))[0] + '_cm.pdf', bbox_inches='tight')
+    plt.savefig('report/images/' + modelname + '_cm.pdf', bbox_inches='tight')
     plt.close()
 
-    report = classification_report(y_test, y_pred)
-    log(logfile,'\nClassification report on full data set:\n' + str(report))
+    report = classification_report(y_test, y_pred, output_dict=True)
+    report_df = pd.DataFrame(report).transpose()
+    log(logfile,"\\begin{table}[H]\n\\caption{Classification report on full data set:}\n\\begin{center}")
+    log(logfile, report_df.to_latex(float_format="%.2f"))
+    log(logfile, "\\label{" + modelname + "_class}\n\\end{center}\n\\end{table}")
 
     TN = matrix[0, 0]
     FP = matrix[0, 1]
@@ -93,7 +97,7 @@ def result_analysis(y_test, y_pred, logfile):
     TP = matrix[1, 1]
 
     fnr = FN * 100 / (FN + TP)
-    log(logfile, "False Negative Rate: " + str(fnr))
+    log(logfile, "\\noindent\nFalse Negative Rate: " + str(f"%.2f" % fnr))
 
     fpr = FP * 100 / (FP + TN)
-    log(logfile, "False Positive Rate: " + str(fpr))
+    log(logfile, "\\\\False Positive Rate: " + str(f"%.2f" % fpr))

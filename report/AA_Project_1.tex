@@ -37,11 +37,11 @@
 \end{IEEEkeywords}
 
 \section{Introduction}
-In this study, it was analyzed the data form the UCI Machine Learning Repository\cite{mlr} regarding patient data used to ascertain the presence of a heart disease. In order to predict said disease were used five models of prediction: Logistic Regression, Naive Bayes, K Nearest Neighbors, Decision Tree and Random Forest.
+For this study, it was analyzed the data form the UCI Machine Learning Repository\cite{mlr} regarding patient data used to ascertain the presence of a heart disease. In order to predict said disease five models of prediction were used: Logistic Regression, Naive Bayes, K Nearest Neighbors, Decision Tree and Random Forest.
 
 \section{Dataset}
-This dataset used for training contains the data of 303 patients from Cleveland\cite{va} described by 14 attributes each; 5 of which are numerical values while the other 9 represent categories. The "goal" field is represented by a binary value representing the presence or absence of heart disease in the patient. There were other 3 other datasets from Hungary\cite{hun}, Switzerland\cite{swz1,swz2} and Long Beach\cite{va} in which the models obtained from the first set were tested after the training. Most of these datasets, however, had many missing values.\\
-The features used are age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting electrocardiogram, maximum heart rate, exercise induced angina, ST depression, ST slope, number of major vessels and Thallium stress test results. An example of the data is show in Table \ref{data_head}.
+The dataset used for training contains the data of 303 patients from a hospital in Cleveland\cite{va} described by 14 attributes each; 5 of which were numerical values while the other 9 represented categories. The "goal" field was given by a binary value representing the presence or absence of heart disease in the patient. There were other 3 other datasets from Hungary\cite{hun}, Switzerland\cite{swz1,swz2} and Long Beach\cite{va} in which the models obtained from the first set were tested after the training. Most of these datasets, however, had many missing values.\\
+The features used are age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting electrocardiogram, maximum heart rate, exercise induced angina, ST depression, ST slope, number of major vessels and Thallium stress test results. An example of a portion the data is show in Table \ref{data_head}.
 
 \begin{table}[htbp]
     \caption{Data head}
@@ -55,7 +55,7 @@ The features used are age, sex, chest pain type, resting blood pressure, cholest
 
 \section{Data analysis}
 
-There are some information that can be gathered from a preliminary analysis of the data. Like the distribution of diseased patients by age, sex or any other attribute.
+There is some information that can be gathered from a preliminary analysis of the data. Like the distribution of diseased patients by age, sex or any other attribute.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.7\linewidth]{images/age_distribution.pdf}}
@@ -71,8 +71,8 @@ For example, in Figure \ref{age_dist} we can see that, in this sample, most of t
     \label{corr_heatmap}
 \end{figure}
 
-But what interests us the most is the relation of this attributes (features) with a case of heart disease(goal).
-\\It was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina, this is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{data_corr} and Figures \ref{corr_heatmap} and \ref{corr_scatter}.
+But what interests us the most is the relation between this attributes (features) and a case of heart disease(goal).
+\\It was verified that some features have more impact on the patient's diagnosis than others. For instance, if a patient has or not exercise induced angina is a much stronger indicator of a heart disease than his number of major vessels or fasting blood sugar value as it can be seen in Table \ref{data_corr} and Figures \ref{corr_heatmap} and \ref{corr_scatter}.
 
 \begin{table}[htbp]
     \caption{Data correlation}
@@ -105,23 +105,13 @@ The logistic regression model uses a "liblinear" solver as it provides better re
 \end{figure}
 
 \noindent
-Train accuracy: 82.64\%
-\\Test accuracy: 70.49\%
-\\[\baselineskip]
-Number of mislabeled points out of a total 61 points : 18
-\\The accuracy score achieved is: 70.49\%
+\input{logs/log_reg.tex}
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.8\linewidth]{images/log_reg_cm.pdf}}
     \caption{Logistic Regression Confusion Matrix}
     \label{lr_cm}
 \end{figure}
-
-\noindent
-False Negative Rate: 38.5
-\\False Positive Rate: 22.9
-\newpage
-
 
 \subsection{Naive Bayes}
 Both the Gaussian and Bernoulli variants of the model were tested, but Bernoulli gave the best results. The Bernoulli method deals in binary inputs and transforms the rest of the data to binary-valued feature vectors. It is based on the formula:
@@ -137,11 +127,7 @@ which means it penalizes the non-occurrence of a feature.
 \end{figure}
 
 \noindent
-Train accuracy: 80.17\%
-\\Test accuracy: 75.41\%
-\\[\baselineskip]
-Number of mislabeled points out of 61 points : 15
-\\The accuracy score achieved is: 75.41\%
+\input{logs/naive_bayes.tex}
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.8\linewidth]{images/naive_bayes_cm.pdf}}
@@ -149,13 +135,8 @@ Number of mislabeled points out of 61 points : 15
     \label{nb_cm}
 \end{figure}
 
-\noindent
-False Negative Rate: 30.8
-\\False Positive Rate: 20.0
-\newpage
-
 \subsection{K Nearest Neighbors}
-The optimal choice of the value of \textit{K} is highly data-dependent: in general a larger suppresses the effects of noise, but makes the classification boundaries less distinct. implements learning based on the \textit{K} nearest neighbors of each query point, where \textit{K} was selected from testing multiple candidates of which 3 gave the best results for the test set.
+The optimal choice of the value of \textit{K} is highly data-dependent: in general a larger suppresses the effects of noise, but makes the classification boundaries less distinct. This model implements learning based on the \textit{K} nearest neighbors of each query point, where \textit{K} was selected from testing multiple candidates of which \textit{K}=3 gave the best results for the test set.
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.9\linewidth]{images/KNeighborsClassifier_lc.pdf}}
@@ -164,23 +145,13 @@ The optimal choice of the value of \textit{K} is highly data-dependent: in gener
 \end{figure}
 
 \noindent
-N neighbors = 3
-\\Train accuracy: 76.03\%
-\\Test accuracy: 70.49\%
-\\[\baselineskip]
-Number of mislabeled points out of 61 points : 18
-\\The accuracy score achieved is: 70.49\%
+\input{logs/k_nearest_neighbors.tex}
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.8\linewidth]{images/k_nearest_neighbors_cm.pdf}}
     \caption{K Nearest Neighbors Confusion Matrix}
     \label{knn_cm}
 \end{figure}
-
-\noindent
-False Negative Rate: 30.8
-\\False Positive Rate: 28.6
-\newpage
 
 \subsection{Decision Tree}
 This model predicts the value of a target variable using simple if-then-else rules inferred from the data features. This decisions can be made on different levels (depth) until reaching the target goal.
@@ -193,23 +164,13 @@ This model predicts the value of a target variable using simple if-then-else rul
 \end{figure}
 
 \noindent
-Max depth = 3
-\\Train accuracy: 85.12\%
-\\Test accuracy: 81.97\%
-\\[\baselineskip]
-Number of mislabeled points out of a total 61 points : 11
-\\The accuracy score achieved is: 81.97\%
+\input{logs/decision_tree.tex}
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.8\linewidth]{images/decision_tree_cm.pdf}}
     \caption{Decision Tree Confusion Matrix}
     \label{dt_cm}
 \end{figure}
-
-\noindent
-False Negative Rate: 26.9
-\\False Positive Rate: 11.4
-\newpage
 
 \subsection{Random Forest}
 
@@ -222,12 +183,7 @@ A random forest is a meta estimator that fits a number of decision tree classifi
 \end{figure}
 
 \noindent
-Max depth = 1
-\\Train accuracy: 84.71\%
-\\Test accuracy: 81.97\%
-\\[\baselineskip]
-Number of mislabeled points out of 61 points : 11
-\\The accuracy score achieved is: 81.97\%
+\input{logs/random_forest.tex}
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=0.8\linewidth]{images/random_forest_cm.pdf}}
@@ -235,16 +191,11 @@ Number of mislabeled points out of 61 points : 11
     \label{rf_cm}
 \end{figure}
 
-\noindent
-False Negative Rate: 34.6
-\\False Positive Rate: 5.7
-\newpage
-
 \section{Results}
 
 Here we can see the comparison between the models for both the original dataset and some different ones from other hospitals.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \caption{Results for the test section of the original data}
     \begin{center}
         \input{tables/original_test_summary.tex}
@@ -254,7 +205,7 @@ Here we can see the comparison between the models for both the original dataset 
 
 In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the data, which was left out from the original dataset for these tests. We can see that Decision Trees and random Forest gave us the best results while Logistic Regression and K Nearest Neighbors fell short.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \caption{Results for the V.A. Medical Center's data}
     \begin{center}
         \input{tables/va_summary.tex}
@@ -264,7 +215,7 @@ In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the 
 
 In another hospital from the USA\cite{va}, whose results are shown in Table \ref{va_res}, we have some general decrease on accuracy, but the relative efficiency of the models remains the same except for the K Nearest Neighbors with a 20\% drop on accuracy.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \caption{Results for the Swiss data}
     \begin{center}
         \input{tables/switzerland_summary.tex}
@@ -286,8 +237,8 @@ The results taken from the data gathered by the Hungarian hospital\cite{hun} and
 
 \section{Conclusion}
 
-Given the results, we can conclude that the model that gave the overall best results was the Random Tree, but this is also the most computational demanding and time consuming. The Bernoulli Naive Bayes gave us good results to fit this specific dataset and it is simple to implement so it seems to be the best choice.
-\\The dataset used for training was relatively small so most of the models didn't have enough data to provide us with a reliable prediction and the datasets tested the models with were missing many of its attributes, so some of the results may be misleading.
+Given the results, we can conclude that the model that gave the overall best results was the Random Tree, but this is also the most computational demanding and time consuming method. The Bernoulli Naive Bayes gave us good results to fit this specific dataset and it is simpler and lighter to implement so it seems to be the best choice.
+\\The dataset used for training was relatively small so most of the models didn't have enough data to converge and provide us with a reliable prediction and the datasets tested the models with were missing many of its attributes, so some of the results may be misleading.
 
 \begin{thebibliography}{00}
     \bibitem{hun} Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.

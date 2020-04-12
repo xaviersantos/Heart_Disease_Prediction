@@ -9,6 +9,7 @@
       <w>imputer</w>
       <w>logreg</w>
       <w>matplotlib</w>
+      <w>modelname</w>
       <w>preprocessing</w>
       <w>pyplot</w>
       <w>randfor</w>
