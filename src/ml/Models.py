@@ -48,19 +48,14 @@ def k_nearest_neighbors(X_train, y_train, X_test, y_test):
     logfile = open("report/logs/k_nearest_neighbors.tex", "w")
     print("K Nearest Neighbors\n")
 
-    print("n_neighbors = 1")
     knn = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, n_neighbors=1)
 
-    print("\nSeek optimal 'n_neighbours' parameter:")
     n_neighbors = 1
     for i in range(2,10):
-        print("\nN neighbors = " + str(i))
         tmp = train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, n_neighbors=i)
         if tmp.score(X_test, y_test) > knn.score(X_test, y_test):
             knn = tmp
             n_neighbors = i
-        else:
-            break
 
     log(logfile, "N neighbors = " + str(n_neighbors) + "\\\\")
     train_model(X_train, y_train, X_test, y_test, KNeighborsClassifier, logfile, n_neighbors=n_neighbors)
@@ -79,7 +74,6 @@ def decision_tree(X_train, y_train, X_test, y_test):
     print("Max depth = 1")
     dt = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, max_depth=1, random_state=0)
 
-    print("\nSeek optimal 'max_depth' parameter:")
     max_depth = 1
     for i in range(2,10):
         tmp = train_model(X_train, y_train, X_test, y_test, DecisionTreeClassifier, max_depth=i, random_state=0)
@@ -105,10 +99,8 @@ def random_forest(X_train, y_train, X_test, y_test):
     rf = train_model(X_train, y_train, X_test, y_test,
                      RandomForestClassifier, max_depth=1, n_estimators=100, random_state=0, n_jobs=-1)
 
-    print("\nSeek optimal 'max_depth' parameter:")
     max_depth = 1
     for i in range(2, 10):
-        print("\nmax_depth = " + str(max_depth))
         tmp = train_model(X_train, y_train, X_test, y_test, RandomForestClassifier,
                           max_depth=i, n_estimators=100, random_state=0, n_jobs=-1)
 

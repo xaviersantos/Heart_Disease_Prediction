@@ -214,7 +214,7 @@ Here we can see the comparison between the models for both the original dataset 
     \end{center}
 \end{table}
 
-In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the data, which was left out from the original dataset for these tests. We can see that Decision Trees and random Forest gave us the best results while Logistic Regression and K Nearest Neighbors fell short.
+In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the data, which was left out from the original dataset for these tests. We can see that Random Forest and Logistic Regression gave us the best results.
 
 \begin{table}[H]
     \caption{Results for the V.A. Medical Center's data}
@@ -224,7 +224,7 @@ In Table \ref{ori_res} are the results taken from the evaluation of 20\% of the 
     \end{center}
 \end{table}
 
-In another hospital from the USA\cite{va}, whose results are shown in Table \ref{va_res}, we have some general decrease on accuracy, but the relative efficiency of the models remains the same except for the K Nearest Neighbors with a 20\% drop on accuracy.
+In another hospital from the USA\cite{va}, whose results are shown in Table \ref{va_res}, we have some general decrease on accuracy, but the Naive Bayes model kept a relatively constant value. K Nearest Neighbors still gave the worst prediction and had a 10\% drop on accuracy.
 
 \begin{table}[H]
     \caption{Results for the Swiss data}
@@ -234,7 +234,7 @@ In another hospital from the USA\cite{va}, whose results are shown in Table \ref
     \end{center}
 \end{table}
 
-Taking the data gathered by 2 hospitals in Switzerland\cite{swz1,swz2}, we see in Table \ref{sw_res} that Logistic Regression predicts most of the cases wrong while the rest of the models perform as expected.
+Taking the data gathered by 2 hospitals in Switzerland\cite{swz1,swz2}, we see in Table \ref{sw_res} that K Nearest Neighbors predicts most of the cases wrong while Naive Bays keeps consistent and Decision Tree performs very well in this scenario.
 
 \begin{table}[H]
     \caption{Results for the Hungarian data}
@@ -244,11 +244,12 @@ Taking the data gathered by 2 hospitals in Switzerland\cite{swz1,swz2}, we see i
     \end{center}
 \end{table}
 
-The results taken from the data gathered by the Hungarian hospital\cite{hun} and displayed in Table \ref{hun_res} show a massive drop in accuracy from the Decision Tree and Logistic Regression and only Naive Bayes and Random Forest provided useful predictions.
+The results taken from the data gathered by the Hungarian hospital\cite{hun} and displayed in Table \ref{hun_res} show that the Naive Bayes model keeps proving the most reliable method and the K Nearest Neighbors is the worse model tested in this conditions.
 
 \section{Conclusion}
 
-Given the results, we can conclude that the model that gave the overall best results was the Random Tree, but this is also the most computational demanding and time consuming method. The Bernoulli Naive Bayes gave us good results to fit this specific dataset and it is simpler and lighter to implement so it seems to be the best choice.
+Given the results, we can conclude that the model that gave the overall best results was the Bernoulli Naive Bayes followed be the Decision Tree model. The Bernoulli Naive Bayes gave us good results to fit this specific dataset and it is light and simple to implement so it seems to be the best choice.
+\\Random Forest also behaved well in most cases, but it is very demanding to process and the most time consuming of all the models tested.
 \\The dataset used for training was relatively small so most of the models didn't have enough data to converge and provide us with a reliable prediction and the datasets tested the models with were missing many of its attributes, so some of the results may be misleading.
 
 \begin{thebibliography}{00}

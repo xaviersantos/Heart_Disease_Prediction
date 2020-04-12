@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  12 APR 2020 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.4)  12 APR 2020 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -641,23 +641,23 @@ pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/na
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/KNeighborsClassifier_lc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >])
-<images/k_nearest_neighbors_cm.pdf, id=396, 369.0269pt x 302.10942pt>
+<images/k_nearest_neighbors_cm.pdf, id=395, 378.60957pt x 298.29831pt>
 File: images/k_nearest_neighbors_cm.pdf Graphic file (type pdf)
 <use images/k_nearest_neighbors_cm.pdf>
 Package pdftex.def Info: images/k_nearest_neighbors_cm.pdf  used on input line 162.
-(pdftex.def)             Requested size: 201.60077pt x 165.0451pt.
-<images/DecisionTreeClassifier_lc.pdf, id=397, 454.95784pt x 337.89111pt>
+(pdftex.def)             Requested size: 201.60077pt x 158.83926pt.
+<images/DecisionTreeClassifier_lc.pdf, id=396, 454.95784pt x 337.89111pt>
 File: images/DecisionTreeClassifier_lc.pdf Graphic file (type pdf)
 <use images/DecisionTreeClassifier_lc.pdf>
 Package pdftex.def Info: images/DecisionTreeClassifier_lc.pdf  used on input line 172.
 (pdftex.def)             Requested size: 226.79846pt x 168.43987pt.
  (/home/xavier/Desktop/AA/project1/report/logs/decision_tree.tex)
-<images/decision_tree_cm.pdf, id=398, 369.0269pt x 302.10942pt>
+<images/decision_tree_cm.pdf, id=397, 369.0269pt x 302.10942pt>
 File: images/decision_tree_cm.pdf Graphic file (type pdf)
 <use images/decision_tree_cm.pdf>
 Package pdftex.def Info: images/decision_tree_cm.pdf  used on input line 181.
 (pdftex.def)             Requested size: 201.60077pt x 165.0451pt.
-<images/RandomForestClassifier_lc.pdf, id=399, 454.95784pt x 337.89111pt>
+<images/RandomForestClassifier_lc.pdf, id=398, 454.95784pt x 337.89111pt>
 File: images/RandomForestClassifier_lc.pdf Graphic file (type pdf)
 <use images/RandomForestClassifier_lc.pdf>
 Package pdftex.def Info: images/RandomForestClassifier_lc.pdf  used on input line 191.
@@ -672,7 +672,7 @@ pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/De
 
 pdfTeX warning: pdflatex (file /home/xavier/Desktop/AA/project1/report/images/decision_tree_cm.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] (/home/xavier/Desktop/AA/project1/report/logs/random_forest.tex)
-<images/random_forest_cm.pdf, id=467, 369.0269pt x 298.29831pt>
+<images/random_forest_cm.pdf, id=468, 369.0269pt x 298.29831pt>
 File: images/random_forest_cm.pdf Graphic file (type pdf)
 <use images/random_forest_cm.pdf>
 Package pdftex.def Info: images/random_forest_cm.pdf  used on input line 200.
@@ -704,9 +704,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  42i,11n,77p,640b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (6 pages, 308850 bytes).
+Output written on /home/xavier/Desktop/AA/project1/report/AA_Project_1.pdf (6 pages, 309201 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
+ 555 PDF objects out of 1000 (max. 8388607)
  120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
