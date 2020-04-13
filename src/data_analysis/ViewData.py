@@ -32,7 +32,7 @@ def show_data(data):
 
 
 def outliers(data):
-    logfile = open("outliers.txt", 'w')
+    logfile = open("report/logs/outliers.txt", 'w')
     log(logfile, "Outliers\n")
 
     z = np.abs(stats.zscore(data))
